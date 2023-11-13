@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Tweaks Galore</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[joyGiverDef="TweaksGalore_ChattyComms"]/thingDefs</xpath>
+			<value>		
+				<li>TSE_AdvCommsConsole</li>
+			</value>
+		</match>
+	</Operation>
+</Patch>

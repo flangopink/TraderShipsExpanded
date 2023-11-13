@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!--
+  <IncidentDef>
+    <defName>TSE_TraderShipArrival</defName>
+    <label>trader ship arrival</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>TraderShipsExpanded.IncidentWorker_TraderShipArrival</workerClass>
+    <category>OrbitalVisitor</category>
+    <baseChance>3</baseChance>
+    <requireColonistsPresent>True</requireColonistsPresent>
+  </IncidentDef>
+-->
+  
+  <IncidentDef>
+    <defName>TSE_CargoShipCrash</defName> <!-- ship chunks and 1-5 groups of resource pods -->
+    <label>cargo ship crash</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>TraderShipsExpanded.IncidentWorker_CargoShipCrash</workerClass>
+    <category>Misc</category>
+    <baseChance>0.075</baseChance>
+  </IncidentDef>
+  
+  <IncidentDef>
+    <defName>TSE_TraderShipCrash</defName> <!-- ship chunks and random trader inventory. can be either a shitton of stuff or barely anything -->
+    <label>trader ship crash</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>TraderShipsExpanded.IncidentWorker_TraderShipCrash</workerClass>
+    <category>Misc</category>
+    <baseChance>0.04</baseChance>
+  </IncidentDef>
+
+</Defs>

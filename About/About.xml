@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Trader Ships Expanded</name>
+	<author>flangopink, Ogam</author>
+	<supportedVersions>
+		<li>1.4</li>
+	</supportedVersions>
+	<packageId>flangopink.TraderShipsExpanded</packageId>
+	<description>description</description> <!-- TODO: Edit -->
+</ModMetaData>

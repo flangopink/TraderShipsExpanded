@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Abstract="True" Name="TraderShipSkyfaller">
+    <category>Ethereal</category>
+    <useHitPoints>false</useHitPoints>
+    <!--<thingClass>TraderShipsExpanded.SkyfallerTradeShip</thingClass>-->
+    <thingClass>Skyfaller</thingClass>
+    <drawOffscreen>true</drawOffscreen>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Skyfaller</altitudeLayer>
+    <drawerType>RealtimeOnly</drawerType>
+    
+    <size>(5,3)</size>
+    
+    <graphicData>
+      <texPath>TSE/Ships/Ship_Explorer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
+	  <drawSize>6</drawSize>
+    </graphicData>
+    
+    <skyfaller>
+      <movementType>Decelerate</movementType>
+      <shadow>Things/Skyfaller/SkyfallerShadowRectangle</shadow>
+      <shadowSize>(4.5,2.5)</shadowSize>
+      <motesPerCell>1</motesPerCell>
+    </skyfaller>
+  </ThingDef>
+  
+  
+  
+  <ThingDef ParentName="TraderShipSkyfaller">
+    <defName>TSE_TraderShipLanding</defName>
+    <label>trader ship (landing)</label>
+    <skyfaller>
+      <anticipationSound>TSE_Sound_TraderShipLanding</anticipationSound>
+      <anticipationSoundTicks>160</anticipationSoundTicks>
+      <ticksToImpactRange>160</ticksToImpactRange>
+      <angleCurve>
+        <points>
+          <li>(0,-20)</li>
+          <li>(0.8,-40)</li>
+          <li>(1,0)</li>
+        </points>
+      </angleCurve>
+      <rotationCurve>
+        <points>
+          <li>(0,30)</li>
+          <li>(0.5,5)</li>
+          <li>(0.9,-5)</li>
+          <li>(0.95,0)</li>
+        </points>
+      </rotationCurve>
+      <zPositionCurve>
+        <points>
+          <li>(0.95,2.5)</li>
+          <li>(1,0)</li>
+        </points>
+      </zPositionCurve>
+      <speedCurve>
+        <points>
+          <li>(0.6,0.6)</li>
+          <li>(0.95,0.1)</li>
+        </points>
+      </speedCurve>
+    </skyfaller>
+  </ThingDef>
+
+  <ThingDef ParentName="TraderShipSkyfaller">
+    <defName>TSE_TraderShipShipLeaving</defName>
+    <label>trader ship (leaving)</label>
+    <skyfaller>
+      <movementType>Accelerate</movementType>
+      <reversed>true</reversed>
+      <anticipationSound>TSE_Sound_TraderShipTakeoff</anticipationSound>
+      <anticipationSoundTicks>-10</anticipationSoundTicks>
+      <ticksToImpactRange>-40~-15</ticksToImpactRange>
+      <moteSpawnTime>0.05</moteSpawnTime>
+      <angleCurve>
+        <points>
+          <li>(0,30)</li>
+          <li>(0.8,90)</li>
+          <li>(1,70)</li>
+        </points>
+      </angleCurve>
+      <rotationCurve>
+        <points>
+          <li>(0,0)</li>
+          <li>(0.15,10)</li>
+          <li>(0.5,-5)</li>
+        </points>
+      </rotationCurve>
+      <zPositionCurve>
+        <points>
+          <li>(0,0)</li>
+          <li>(0.08,2)</li>
+        </points>
+      </zPositionCurve>
+      <speedCurve>
+        <points>
+          <li>(0,0.2)</li>
+          <li>(0.4,0.7)</li>
+        </points>
+      </speedCurve>
+    </skyfaller>
+  </ThingDef>
+</Defs>

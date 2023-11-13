@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<TSE_Goods>goods</TSE_Goods> <!-- placeholder for bad labels -->
+	<TSE_TraderShip>{0} ship</TSE_TraderShip> <!-- "combat supplier trader ship" -->
+	
+	<TSE_TraderShipNamed>Trader ship: «{0}»</TSE_TraderShipNamed>
+	<TSE_TraderShipLeavingIn>Trader ship leaving in: {0}.</TSE_TraderShipLeavingIn>
+	
+	<TSE_TraderShipArrival_LetterHeader>Trader ship arrived</TSE_TraderShipArrival_LetterHeader>
+	<TSE_TraderShipArrival_LetterDesc>A trader ship of the «{0}» {1} has arrived.\n\n{2}</TSE_TraderShipArrival_LetterDesc>
+	
+	<TSE_TraderShipLeavingDueToDamage>«{0}» trader ship is leaving due to damage.</TSE_TraderShipLeavingDueToDamage>
+	<TSE_TraderShipSendAway>Send away</TSE_TraderShipSendAway>
+	<TSE_TraderShipSendAwayDesc>Send the trader ship away.</TSE_TraderShipSendAwayDesc>
+
+</LanguageData>
