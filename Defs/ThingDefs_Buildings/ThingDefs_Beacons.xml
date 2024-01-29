@@ -48,7 +48,7 @@
     </comps>
 	<modExtensions>
       <li Class="TraderShipsExpanded.ModExt_CustomTradeBeacon">
-        <range>23.9</range>
+        <range>31.9</range>
       </li>
 	</modExtensions>
     <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>

@@ -14,6 +14,12 @@
 			<label>small orbital trade beacon</label>
 		</value>
 	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="OrbitalTradeBeacon"]/uiOrder</xpath>
+		<value>		
+			<uiOrder>2222</uiOrder>
+		</value>
+	</Operation>
 	<!--
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="OrbitalTradeBeacon"]/building</xpath>

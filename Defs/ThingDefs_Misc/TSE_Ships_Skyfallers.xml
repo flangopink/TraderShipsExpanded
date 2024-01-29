@@ -23,7 +23,7 @@
     <skyfaller>
       <movementType>Decelerate</movementType>
       <shadow>Things/Skyfaller/SkyfallerShadowRectangle</shadow>
-      <shadowSize>(4.5,2.5)</shadowSize>
+      <shadowSize>(5,3)</shadowSize>
       <motesPerCell>1</motesPerCell>
     </skyfaller>
   </ThingDef>
