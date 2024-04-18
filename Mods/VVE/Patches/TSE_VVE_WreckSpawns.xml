@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/VFECore.ObjectSpawnsDef[defName="VVE_AllMaps_VehicleWrecks"]/thingDefs</xpath>
+		<value>
+			<TSE_Vehicle_Swordfish>0.8</TSE_Vehicle_Swordfish>
+			<TSE_Vehicle_Mace>0.6</TSE_Vehicle_Mace>
+			<TSE_Vehicle_Mule>0.4</TSE_Vehicle_Mule>
+			<TSE_Vehicle_Tortoise>0.2</TSE_Vehicle_Tortoise>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/VFECore.ObjectSpawnsDef[defName="VVE_DirtPath_VehicleWrecks"]/thingDefs</xpath>
+		<value>
+			<TSE_Vehicle_Swordfish>0.8</TSE_Vehicle_Swordfish>
+			<TSE_Vehicle_Mace>0.6</TSE_Vehicle_Mace>
+			<TSE_Vehicle_Mule>0.4</TSE_Vehicle_Mule>
+			<TSE_Vehicle_Tortoise>0.2</TSE_Vehicle_Tortoise>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/VFECore.ObjectSpawnsDef[defName="VVE_DirtRoad_VehicleWrecks"]/thingDefs</xpath>
+		<value>
+			<TSE_Vehicle_Swordfish>0.8</TSE_Vehicle_Swordfish>
+			<TSE_Vehicle_Mace>0.6</TSE_Vehicle_Mace>
+			<TSE_Vehicle_Mule>0.4</TSE_Vehicle_Mule>
+			<TSE_Vehicle_Tortoise>0.2</TSE_Vehicle_Tortoise>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/VFECore.ObjectSpawnsDef[defName="VVE_StoneRoad_VehicleWrecks"]/thingDefs</xpath>
+		<value>
+			<TSE_Vehicle_Swordfish>0.8</TSE_Vehicle_Swordfish>
+			<TSE_Vehicle_Mace>0.6</TSE_Vehicle_Mace>
+			<TSE_Vehicle_Mule>0.4</TSE_Vehicle_Mule>
+			<TSE_Vehicle_Tortoise>0.2</TSE_Vehicle_Tortoise>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/VFECore.ObjectSpawnsDef[defName="VVE_AncientAsphaltRoad_VehicleWrecks"]/thingDefs</xpath>
+		<value>
+			<TSE_Vehicle_Swordfish>0.8</TSE_Vehicle_Swordfish>
+			<TSE_Vehicle_Mace>0.6</TSE_Vehicle_Mace>
+			<TSE_Vehicle_Mule>0.4</TSE_Vehicle_Mule>
+			<TSE_Vehicle_Tortoise>0.2</TSE_Vehicle_Tortoise>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/VFECore.ObjectSpawnsDef[defName="VVE_AncientAsphaltHighway_VehicleWrecks"]/thingDefs</xpath>
+		<value>
+			<TSE_Vehicle_Swordfish>0.8</TSE_Vehicle_Swordfish>
+			<TSE_Vehicle_Mace>0.6</TSE_Vehicle_Mace>
+			<TSE_Vehicle_Mule>0.4</TSE_Vehicle_Mule>
+			<TSE_Vehicle_Tortoise>0.2</TSE_Vehicle_Tortoise>
+		</value>
+	</Operation>
+</Patch>  

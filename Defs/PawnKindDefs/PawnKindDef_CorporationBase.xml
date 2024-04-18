@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- Space Marine -->
+    <PawnKindDef Name="TSE_BasePawn" Abstract="True">
+        <race>Human</race>
+        <!--<defaultFactionType>???</defaultFactionType>-->
+        <initialWillRange>10~25</initialWillRange>
+        <initialResistanceRange>10~25</initialResistanceRange>
+        <invNutrition>2.55</invNutrition>
+        <minGenerationAge>20</minGenerationAge>
+        <maxGenerationAge>50</maxGenerationAge>
+        <itemQuality>Normal</itemQuality>
+        <requiredWorkTags>Violent</requiredWorkTags>
+        <useFactionXenotypes>true</useFactionXenotypes>
+		<defaultFactionType>TSE_Faction_GTC</defaultFactionType>
+        <gearHealthRange>
+            <min>0.9</min>
+            <max>1</max>
+        </gearHealthRange>
+        <weaponMoney>10000~10000</weaponMoney>
+        <inventoryOptions>
+            <subOptionsChooseOne>
+                <li>
+                    <thingDef>MealSurvivalPack</thingDef>
+                    <countRange>
+                        <min>2</min>
+                        <max>4</max>
+                    </countRange>
+                </li>
+                <li>
+                    <thingDef>MedicineUltratech</thingDef>
+                    <countRange>
+                        <min>1</min>
+                        <max>2</max>
+                    </countRange>
+                </li>
+            </subOptionsChooseOne>
+        </inventoryOptions>
+    </PawnKindDef>
+
+</Defs>

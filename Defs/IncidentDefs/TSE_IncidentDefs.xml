@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Defs>
+<Defs></Defs>
+<!--
 
+<Defs>
+-->
 <!--
   <IncidentDef>
     <defName>TSE_TraderShipArrival</defName>
@@ -14,27 +17,53 @@
     <requireColonistsPresent>True</requireColonistsPresent>
   </IncidentDef>
 -->
-  
+  <!-- ship chunks, resource pods, pawn pods -->
+<!--
   <IncidentDef>
-    <defName>TSE_CargoShipCrash</defName> <!-- ship chunks and 1-5 groups of resource pods -->
+    <defName>TSE_CargoShipCrash</defName>
     <label>cargo ship crash</label>
     <targetTags>
       <li>Map_PlayerHome</li>
     </targetTags>
-    <workerClass>TraderShipsExpanded.IncidentWorker_CargoShipCrash</workerClass>
+    comment <workerClass>TraderShipsExpanded.IncidentWorker_CargoShipCrash</workerClass> comment
     <category>Misc</category>
-    <baseChance>0.075</baseChance>
+    <baseChance>0.1</baseChance>
+    <workerClass>IncidentWorker_GiveQuest</workerClass>
+    <questScriptDef>TSE_QS_CargoShipCrash</questScriptDef>
+    <populationEffect>IncreaseMedium</populationEffect>
+    <requireColonistsPresent>True</requireColonistsPresent>
   </IncidentDef>
   
+  <QuestScriptDef>
+    <defName>TSE_QS_CargoShipCrash</defName>
+    <autoAccept>true</autoAccept>
+    <defaultCharity>false</defaultCharity>
+    <defaultHidden>true</defaultHidden>
+    <isRootSpecial>true</isRootSpecial>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->Cargo ship crash</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->A cargo ship crashes nearby</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="TraderShipsExpanded.QuestNode_Root_CargoShipCrash" />
+  </QuestScriptDef>
+  
+  
+  
   <IncidentDef>
-    <defName>TSE_TraderShipCrash</defName> <!-- ship chunks and random trader inventory. can be either a shitton of stuff or barely anything -->
+    <defName>TSE_TraderShipCrash</defName>
     <label>trader ship crash</label>
     <targetTags>
       <li>Map_PlayerHome</li>
     </targetTags>
-    <workerClass>TraderShipsExpanded.IncidentWorker_TraderShipCrash</workerClass>
+    <workerClass>TraderShipsExpanded.IncidentWorker_TraderShipCrash</workerClass> //comment ship chunks and random trader inventory. can be either a shitton of stuff or barely anything //comment
     <category>Misc</category>
-    <baseChance>0.04</baseChance>
+    <baseChance>0.05</baseChance>
   </IncidentDef>
-
 </Defs>
+-->

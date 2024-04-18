@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <TraderKindDef>
+        <defName>TSE_MedicalDepartment</defName>
+        <label>medical department</label>
+        <commonality>1</commonality>
+        <faction>TSE_Faction_GTC</faction>
+        <stockGenerators>
+
+            <!-- Resources -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Silver</thingDef>
+                <countRange>2000~4500</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Neutroamine</thingDef>
+                <countRange>50~200</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>MedicineIndustrial</thingDef>
+                <countRange>35~70</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>MedicineUltratech</thingDef>
+                <countRange>20~40</countRange>
+            </li>
+
+            <!-- Drugs -->
+            <li Class="StockGenerator_Category">
+                <categoryDef>Drugs</categoryDef>
+                <thingDefCountRange>3~4</thingDefCountRange>
+                <totalPriceRange>700~5000</totalPriceRange>
+            </li>
+
+            <!-- Techprints -->
+            <li Class="StockGenerator_Techprints">
+                <countChances>
+                    <li>
+                        <count>2</count>
+                        <chance>0.5</chance>
+                    </li>
+                    <li>
+                        <count>3</count>
+                        <chance>0.5</chance>
+                    </li>
+                </countChances>
+            </li>
+
+            <!-- Implants -->
+            <li Class="StockGenerator_Tag">
+                <tradeTag>ImplantEmpireCommon</tradeTag>
+                <thingDefCountRange>2~3</thingDefCountRange>
+                <countRange>1~3</countRange>
+            </li>
+            <li Class="StockGenerator_Tag">
+                <tradeTag>ImplantEmpireRoyal</tradeTag>
+                <thingDefCountRange>2~3</thingDefCountRange>
+                <countRange>1~3</countRange>
+            </li>
+
+            <!-- Genepack -->
+            <li MayRequire="Ludeon.RimWorld.Biotech" Class="StockGenerator_SingleDef">
+                <thingDef>Genepack</thingDef>
+                <countRange>1~1</countRange>
+            </li>
+
+            <!-- Psytrainers -->
+            <li Class="StockGenerator_Category">
+                <categoryDef>NeurotrainersPsycast</categoryDef>
+                <thingDefCountRange>2~2</thingDefCountRange>
+                <countRange>0~2</countRange>
+            </li>
+
+            <!-- Archite capsules -->
+            <li MayRequire="Ludeon.RimWorld.Biotech" Class="StockGenerator_SingleDef">
+                <thingDef>ArchiteCapsule</thingDef>
+                <countRange>-1~2</countRange>                <!-- 50% chance for 1~2 -->    <!-- flango's note: huh, that's smart! -->
+            </li>
+
+            <!-- Deathrest capacity serum -->
+            <li MayRequire="Ludeon.RimWorld.Biotech" Class="StockGenerator_SingleDef">
+                <thingDef>DeathrestCapacitySerum</thingDef>
+                <countRange>0~1</countRange>
+            </li>
+
+            <!-- Buying -->
+            <li Class="StockGenerator_BuyExpensiveSimple" />
+
+        </stockGenerators>
+    </TraderKindDef>
+
+</Defs>

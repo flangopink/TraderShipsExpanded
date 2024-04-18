@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- Manager -->
+    <PawnKindDef ParentName="TSE_BasePawn">
+        <defName>TSE_Corporation_Manager</defName>
+        <label>corporation manager</label>
+        <apparelRequired>
+            <li>TSE_Corp_Suit</li>
+        </apparelRequired>
+        <weaponTags>
+            <li>CorporationStandardPistol</li>
+        </weaponTags>
+        <combatPower>60</combatPower>
+        <skills>
+            <li>
+                <skill>Shooting</skill>
+                <range>4~8</range>
+            </li>
+            <li>
+                <skill>Melee</skill>
+                <range>4~8</range>
+            </li>
+            <li>
+                <skill>Social</skill>
+                <range>7~10</range>
+            </li>
+        </skills>
+    </PawnKindDef>
+
+</Defs>

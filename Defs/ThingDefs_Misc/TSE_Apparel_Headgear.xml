@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <!-- Corporation Cap -->
+  <ThingDef ParentName="TSE_CorpApparel_Hat">
+    <defName>TSE_Corp_Cap</defName>
+    <label>corporation cap</label>
+    <description>...</description>
+    <graphicData>
+      <texPath>TSE/Apparel/Cap/_item</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <costStuffCount>50</costStuffCount>
+    <statBases>
+      <WorkToMake>4000</WorkToMake>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>1.4</Mass>
+      <Insulation_Cold>2</Insulation_Cold>
+      <Insulation_Heat>2</Insulation_Heat>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>UpperHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>TSE/Apparel/Cap/Cap</wornGraphicPath>
+      <!--<hatRenderedFrontOfFace>true</hatRenderedFrontOfFace>--> <!-- outdated! throws errors in 1.5 -->
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags>
+        <li>CorporationCap</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+</Defs>

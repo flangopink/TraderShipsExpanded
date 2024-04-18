@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <TraderKindDef>
+        <defName>TSE_MiningDepartment</defName>
+        <label>mining department</label>
+        <commonality>1</commonality>
+        <!--<requestable>False</requestable>-->
+        <faction>TSE_Faction_GTC</faction>
+        <stockGenerators>
+
+            <!-- Resources -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Silver</thingDef>
+                <countRange>2000~4500</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Steel</thingDef>
+                <countRange>500~2000</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Plasteel</thingDef>
+                <countRange>400~600</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Uranium</thingDef>
+                <countRange>80~300</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Gold</thingDef>
+                <countRange>100~200</countRange>
+            </li>
+
+            <!-- Buying -->
+            <li Class="StockGenerator_BuyExpensiveSimple" />
+
+        </stockGenerators>
+    </TraderKindDef>
+
+</Defs>

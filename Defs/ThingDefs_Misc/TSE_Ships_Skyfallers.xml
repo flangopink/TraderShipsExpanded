@@ -14,7 +14,7 @@
     <size>(5,3)</size>
     
     <graphicData>
-      <texPath>TSE/Ships/Ship_Explorer</texPath>
+      <texPath>TSE/UI/Empty</texPath>
       <graphicClass>Graphic_Single</graphicClass>
 	  <shaderType>CutoutComplex</shaderType>
 	  <drawSize>6</drawSize>
@@ -23,9 +23,13 @@
     <skyfaller>
       <movementType>Decelerate</movementType>
       <shadow>Things/Skyfaller/SkyfallerShadowRectangle</shadow>
-      <shadowSize>(5,3)</shadowSize>
+      <shadowSize>(10,4)</shadowSize>
       <motesPerCell>1</motesPerCell>
     </skyfaller>
+	
+	<comps>
+	  <li><compClass>CompColorable</compClass></li>
+	</comps>
   </ThingDef>
   
   
@@ -95,14 +99,19 @@
         <points>
           <li>(0,0)</li>
           <li>(0.08,2)</li>
+          <li>(0.2,6)</li>
         </points>
       </zPositionCurve>
       <speedCurve>
         <points>
-          <li>(0,0.2)</li>
-          <li>(0.4,0.7)</li>
+          <li>(0,0.1)</li>
+          <li>(0.4,0.4)</li>
+          <li>(0.7,0.7)</li>
         </points>
       </speedCurve>
     </skyfaller>
+	<comps>
+	  <li><compClass>CompColorable</compClass></li>
+	</comps>
   </ThingDef>
 </Defs>

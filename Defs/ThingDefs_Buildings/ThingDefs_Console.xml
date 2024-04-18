@@ -53,6 +53,7 @@
       </li>
       <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Forbiddable"/>
       <li Class="CompProperties_Usable" MayRequire="Ludeon.RimWorld.Biotech">
         <useJob>TriggerObject</useJob>
         <useLabel>Summon diabolus threat</useLabel>
@@ -67,12 +68,12 @@
         <spawnLetterTextKey>LetterCommsConsoleSpawned</spawnLetterTextKey>
         <effecterDef>CommsConsoleBossgroupSummoned</effecterDef>
         <delayTicks>120</delayTicks>
-      </li>
-      <li Class="CompProperties_ScannerMineralsDeep">
+      </li>      
+	  <li Class="CompProperties_LongRangeMineralScanner">
         <scanSpeedStat>ResearchSpeed</scanSpeedStat>
-        <scanFindMtbDays>6</scanFindMtbDays>
-        <scanFindGuaranteedDays>10</scanFindGuaranteedDays>
-        <soundWorking>ScannerGroundPenetrating_Ambience</soundWorking>
+        <scanFindMtbDays>4</scanFindMtbDays>
+        <scanFindGuaranteedDays>8</scanFindGuaranteedDays>
+        <soundWorking>ScannerLongRangeMineral_Ambience</soundWorking>
       </li>
     </comps>
     <designationHotKey>Misc3</designationHotKey>

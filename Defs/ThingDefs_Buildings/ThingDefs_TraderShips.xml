@@ -11,68 +11,124 @@
     <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
     <filthLeaving>Filth_RubbleBuilding</filthLeaving>
     <statBases>
-      <SellPriceFactor>0.70</SellPriceFactor>
-    </statBases>
-    <blockWind>true</blockWind>
-
-    <passability>Impassable</passability>
-  </ThingDef>
-
-  <ThingDef ParentName="TraderShipBuildingBase">
-    <defName>TSE_TraderShip</defName>
-    <label>trader ship</label>
-    <description>A trader ship.</description>
-
-    <graphicData>
-      <texPath>TSE/Ships/Ship_Explorer</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-	  <shaderType>CutoutComplex</shaderType>
-	  <drawSize>6</drawSize>
-      <shadowData>
-        <volume>(4.1, 1.0, 1.8)</volume>
-        <offset>(0, 0, -0.1)</offset>
-      </shadowData>
-    </graphicData>
-    <uiIconPath>TSE/UI/Ship</uiIconPath>
-
-    <statBases>
+	  <MarketValue>0</MarketValue>
       <MaxHitPoints>4000</MaxHitPoints>
       <Flammability>1</Flammability>
     </statBases>
-
+    <blockWind>true</blockWind>
+    <passability>Impassable</passability>
+	
+    <label>trader ship</label>
+    <description>A trader ship.</description>
+    <uiIconPath>TSE/UI/Empty</uiIconPath>
+	
     <killedLeavings>
       <Steel>100</Steel>
       <Plasteel>200</Plasteel>
       <ComponentIndustrial>12</ComponentIndustrial>
       <ComponentSpacer>4</ComponentSpacer>
     </killedLeavings>
-
     <altitudeLayer>Building</altitudeLayer>
     <fillPercent>1.0</fillPercent>
-    
     <tickerType>Normal</tickerType>
-    <size>(5,3)</size>
-    
-    <interactionCellOffset>(0,0,-2)</interactionCellOffset>
+	
     <hasInteractionCell>true</hasInteractionCell>
 
     <rotatable>false</rotatable>
+    <building>
+      <claimable>false</claimable>
+    </building>
     
     <comps>
+	  <li><compClass>CompColorable</compClass></li>
       <li Class="TraderShipsExpanded.CompProperties_TraderShip">
         <landAnimation>TSE_TraderShipLanding</landAnimation>
         <takeoffAnimation>TSE_TraderShipShipLeaving</takeoffAnimation>
         <soundThud>TSE_Sound_TraderShipThud</soundThud>
       </li>
     </comps>
-    
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    
-    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
-    <building>
-      <claimable>false</claimable>
-    </building>
-    
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <min>(0.1,0.1,0.1)</min>
+          <max>(0.7,0.7,0.7)</max>
+        </li>
+      </options>
+    </colorGenerator>
+	
+	<tradeTags>
+		<li>TSE_Ship</li> <!-- used for GenStep for crash sites and stuff -->
+	</tradeTags>
+	
   </ThingDef>
+  
+  
+
+  <ThingDef ParentName="TraderShipBuildingBase">
+    <defName>TSE_TraderShip_Swordfish</defName>
+    <graphicData>
+      <texPath>TSE/Ships/Swordfish/Swordfish</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
+      <shadowData>
+        <volume>(6, 1, 2)</volume>
+        <offset>(-1, 0, -1)</offset>
+      </shadowData>
+	  <drawSize>(11,5)</drawSize>
+    </graphicData>
+    <size>(11,4)</size>
+    <interactionCellOffset>(0,0,-2)</interactionCellOffset>
+  </ThingDef>
+
+  <ThingDef ParentName="TraderShipBuildingBase">
+    <defName>TSE_TraderShip_Mace</defName>
+    <graphicData>
+      <texPath>TSE/Ships/Mace/Mace</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
+      <shadowData>
+        <volume>(8, 1, 4)</volume>
+        <offset>(-0.6, 0, -0.4)</offset>
+      </shadowData>
+	  <drawSize>(15,7)</drawSize>
+	  <drawOffset>(0,0,0.6)</drawOffset>
+    </graphicData>
+    <size>(13,5)</size>
+    <interactionCellOffset>(-3,0,-3)</interactionCellOffset>
+  </ThingDef>
+  
+  <ThingDef ParentName="TraderShipBuildingBase">
+    <defName>TSE_TraderShip_Mule</defName>
+    <graphicData>
+      <texPath>TSE/Ships/Mule/Mule</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
+      <shadowData>
+        <volume>(9, 1, 5)</volume>
+        <offset>(0, 0, -1)</offset>
+      </shadowData>
+	  <drawSize>(14,9)</drawSize>
+    </graphicData>
+    <size>(14,7)</size>
+    <interactionCellOffset>(2,0,-4)</interactionCellOffset>
+  </ThingDef>
+  
+  <ThingDef ParentName="TraderShipBuildingBase">
+    <defName>TSE_TraderShip_Tortoise</defName>
+    <graphicData>
+      <texPath>TSE/Ships/Tortoise/Tortoise</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
+      <shadowData>
+        <volume>(13, 1, 7)</volume>
+        <offset>(0, 0, -1)</offset>
+      </shadowData>
+	  <drawSize>(17,11)</drawSize>
+    </graphicData>
+    <size>(17,9)</size>
+    <interactionCellOffset>(-3,0,-5)</interactionCellOffset>
+  </ThingDef>
+
+
 
 </Defs>

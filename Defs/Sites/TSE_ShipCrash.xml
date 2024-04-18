@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SitePartDef Name="TSE_SitePartBase" Abstract="True">
+    <workerClass>TraderShipsExpanded.SitePartWorker_Generic</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>TSE/UI/CrashedShip</expandingIconTexture>
+    <forceExitAndRemoveMapCountdownDurationDays>2</forceExitAndRemoveMapCountdownDurationDays>
+    <requiresFaction>true</requiresFaction>
+    <increasesPopulation>false</increasesPopulation>
+    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <!--<showFactionInInspectString>true</showFactionInInspectString>--> <!-- wrong faction -->
+  </SitePartDef>
+
+  <SitePartDef ParentName="TSE_SitePartBase">
+    <defName>TSE_TraderShipCrash</defName>
+    <label>trader ship crash site</label>
+    <description>A crashed trader ship with wounded ship personnel on site.</description>
+    <tags>
+      <li>TSE_TraderShipCrash</li>
+    </tags>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>TSE_TraderShipCrash</defName>
+    <linkWithSite>TSE_TraderShipCrash</linkWithSite>
+    <order>680</order>
+    <genStep Class="TraderShipsExpanded.GenStep_ShipCrashSite" />
+  </GenStepDef>
+
+
+  <SitePartDef ParentName="TSE_SitePartBase">
+    <defName>TSE_WoundedShipPersonnel</defName>
+    <label>wounded ship personnel present</label>
+    <!--<description>A crashed ship with wounded trader ship personnel.\nIt may have attracted hostiles.</description>-->
+	<description>...</description>
+    <tags>
+      <li>TSE_WoundedShipPersonnel</li>
+    </tags>
+    <defaultHidden>true</defaultHidden> <!-- no looking! -->
+  </SitePartDef>
+  <GenStepDef>
+    <defName>TSE_WoundedShipPersonnel</defName>
+    <linkWithSite>TSE_WoundedShipPersonnel</linkWithSite>
+    <order>700</order> <!-- MUST RUN AFTER PIRATES -->
+    <genStep Class="TraderShipsExpanded.GenStep_WoundedShipPersonnel" />
+  </GenStepDef>
+  
+  
+  <SitePartDef ParentName="TSE_SitePartBase">
+    <defName>TSE_TraderShipPirateRaid</defName>
+    <label>possible hostile threat</label>
+	<description>...</description>
+    <tags>
+      <li>TSE_TraderShipPirateRaid</li>
+    </tags>
+    <defaultHidden>true</defaultHidden> <!-- no looking! -->
+    <arrivedLetter>There is a pirate raid at the ship crash site.</arrivedLetter>
+    <arrivedLetterDef>NegativeEvent</arrivedLetterDef>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>TSE_TraderShipPirateRaid</defName>
+    <linkWithSite>TSE_TraderShipPirateRaid</linkWithSite>
+    <order>690</order> <!-- MUST RUN BEFORE ALLIES -->
+    <genStep Class="TraderShipsExpanded.GenStep_TraderShipPirateRaid" />
+  </GenStepDef>
+  
+</Defs>

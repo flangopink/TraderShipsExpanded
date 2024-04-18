@@ -1,0 +1,131 @@
+<Defs>
+	<TraderShipsExpanded.TraderCompanyDef>
+		<defName>TSE_Company_OrbitalStation</defName>
+		<label>Orbital Station</label>
+		<iconPath>TSE/Factions/Icon</iconPath>
+		<iconColor>(255,255,100)</iconColor>
+		<shipThingDefs>
+			<li>TSE_TraderShip_Swordfish</li>
+			<li>TSE_TraderShip_Mule</li>
+			<li>TSE_TraderShip_Mace</li>
+		</shipThingDefs>
+		<requestCostForAll>400</requestCostForAll> <!-- Override prices. Empty traderKinds = all traders are available -->
+		<!--
+		<traderKinds>
+			<li>
+				<traderKindDef>...</traderKindDef>
+				<requestCost>...</requestCost>
+			</li>
+		</traderKinds>
+		-->
+		<excludedTraderKinds>
+			<li>TSE_ProductionDepartment</li>
+			<li>TSE_MiningDepartment</li>
+			<li>TSE_MedicalDepartment</li>
+			<li>TSE_MilitaryDepartment</li>
+		</excludedTraderKinds>
+	</TraderShipsExpanded.TraderCompanyDef>
+	
+	<TraderShipsExpanded.TraderCompanyDef>
+		<defName>TSE_Company_GalaxyTrader</defName>
+		<label>Galaxy Trading Corp Station</label>
+		<iconPath>TSE/Factions/Icon</iconPath>
+		<iconColor>(255,100,255)</iconColor>
+		<factionDef>TSE_Faction_GTC</factionDef>
+		<shipThingDefs>
+			<li>TSE_TraderShip_Tortoise</li> <!-- ADD THE SHIP THINGIE -->
+			<!--
+			<li>TSE_TraderShip_Swordfish</li>
+			<li>TSE_TraderShip_Mule</li>
+			<li>TSE_TraderShip_Mace</li>
+			-->
+		</shipThingDefs>
+		<traderKinds>
+			<li>
+				<traderKindDef>TSE_ProductionDepartment</traderKindDef>
+				<requestCost>300</requestCost>
+			</li>
+			<li>
+				<traderKindDef>TSE_MiningDepartment</traderKindDef>
+				<requestCost>300</requestCost>
+			</li>
+			<li>
+				<traderKindDef>TSE_MedicalDepartment</traderKindDef>
+				<requestCost>400</requestCost>
+			</li>
+			<li>
+				<traderKindDef>TSE_MilitaryDepartment</traderKindDef>
+				<requestCost>500</requestCost>
+			</li>
+		</traderKinds>
+	</TraderShipsExpanded.TraderCompanyDef>
+	
+	
+	<!--
+	<TraderShipsExpanded.TraderShipDef>
+		<defName>TSE_Trader_Random</defName>
+		<name>MannCo</name>
+		<label>random goods trader</label>
+		<shipThingDefs>
+			<li>TSE_TraderShip_Swordfish</li>
+			<li>TSE_TraderShip_Mule</li>
+			<li>TSE_TraderShip_Mace</li>
+		</shipThingDefs>
+		<iconColor>(255,100,255)</iconColor>
+		<requestCost>50</requestCost>
+	</TraderShipsExpanded.TraderShipDef>
+	
+	<TraderShipsExpanded.TraderShipDef>
+		<defName>TSE_Trader_Medical</defName>
+		<name>GlitterMeds Inc</name>
+		<label>medical department trader</label>
+		<shipThingDefs>
+			<li>TSE_TraderShip_Swordfish</li>
+			<li>TSE_TraderShip_Mule</li>
+			<li>TSE_TraderShip_Mace</li>
+		</shipThingDefs>
+		<iconColor>(50,50,200)</iconColor>
+		<requestCost>100</requestCost>
+	</TraderShipsExpanded.TraderShipDef>
+	
+	<TraderShipsExpanded.TraderShipDef>
+		<defName>TSE_Trader_Mining</defName>
+		<name>DeepRock Inc</name>
+		<label>mining department trader</label>
+		<shipThingDefs>
+			<li>TSE_TraderShip_Swordfish</li>
+			<li>TSE_TraderShip_Mule</li>
+			<li>TSE_TraderShip_Mace</li>
+		</shipThingDefs>
+		<iconColor>(200,200,50)</iconColor>
+		<requestCost>100</requestCost>
+	</TraderShipsExpanded.TraderShipDef>
+	
+	<TraderShipsExpanded.TraderShipDef>
+		<defName>TSE_Trader_Production</defName>
+		<name>Ironwood Corp</name>
+		<label>production department trader</label>
+		<shipThingDefs>
+			<li>TSE_TraderShip_Swordfish</li>
+			<li>TSE_TraderShip_Mule</li>
+			<li>TSE_TraderShip_Mace</li>
+		</shipThingDefs>
+		<iconColor>(50,200,50)</iconColor>
+		<requestCost>100</requestCost>
+	</TraderShipsExpanded.TraderShipDef>
+	
+	<TraderShipsExpanded.TraderShipDef>
+		<defName>TSE_Trader_Military</defName>
+		<name>GunDone Group</name>
+		<label>military department trader</label>
+		<shipThingDefs>
+			<li>TSE_TraderShip_Swordfish</li>
+			<li>TSE_TraderShip_Mule</li>
+			<li>TSE_TraderShip_Mace</li>
+		</shipThingDefs>
+		<iconColor>(200,50,50)</iconColor>
+		<requestCost>150</requestCost>
+	</TraderShipsExpanded.TraderShipDef>
+	-->
+	
+</Defs>

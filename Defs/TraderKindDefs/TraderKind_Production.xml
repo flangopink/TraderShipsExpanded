@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <TraderKindDef>
+        <defName>TSE_ProductionDepartment</defName>
+        <label>production department</label>
+        <commonality>1</commonality>
+        <!--<requestable>False</requestable>-->
+        <faction>TSE_Faction_GTC</faction>
+        <stockGenerators>
+
+            <!-- Resources -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Silver</thingDef>
+                <countRange>2000~4500</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>ComponentIndustrial</thingDef>
+                <countRange>20~70</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>ComponentSpacer</thingDef>
+                <countRange>8~16</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>WoodLog</thingDef>
+                <countRange>800~2000</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Cloth</thingDef>
+                <countRange>400~800</countRange>
+            </li>
+            <li Class="StockGenerator_Category">
+                <categoryDef>Textiles</categoryDef>
+                <thingDefCountRange>1~4</thingDefCountRange>
+                <totalPriceRange>400~2000</totalPriceRange>
+            </li>
+            <li Class="StockGenerator_Category">
+                <categoryDef>ResourcesRaw</categoryDef>
+                <thingDefCountRange>2~4</thingDefCountRange>
+                <totalPriceRange>400~800</totalPriceRange>
+              </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Chemfuel</thingDef>
+                <countRange>300~500</countRange>
+            </li>
+
+            <!-- Techprints -->
+            <li Class="StockGenerator_Techprints">
+                <countChances>
+                    <li>
+                        <count>2</count>
+                        <chance>0.5</chance>
+                    </li>
+                    <li>
+                        <count>3</count>
+                        <chance>0.5</chance>
+                    </li>
+                </countChances>
+            </li>
+
+            <!-- Buying -->
+            <li Class="StockGenerator_BuyExpensiveSimple" />
+
+        </stockGenerators>
+    </TraderKindDef>
+
+</Defs>

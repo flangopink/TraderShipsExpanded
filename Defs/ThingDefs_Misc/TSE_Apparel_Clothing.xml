@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef Name="TSE_CorpApparel" ParentName="ApparelMakeableBase" Abstract="True">
+    <techLevel>Industrial</techLevel>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <recipeMaker>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <displayPriority>445</displayPriority>
+    </recipeMaker>
+    <tradeTags>
+      <li>TSE_Corporation</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <ThingDef Name="TSE_CorpApparel_Hat" ParentName="HatMakeableBase" Abstract="True">
+    <techLevel>Industrial</techLevel>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <recipeMaker>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <displayPriority>444</displayPriority>
+    </recipeMaker>
+    <tradeTags>
+      <li>TSE_Corporation</li>
+    </tradeTags>
+  </ThingDef>
+
+  <!-- Corporation Formal Suit -->
+  <ThingDef ParentName="TSE_CorpApparel">
+    <defName>TSE_Corp_Suit</defName>
+    <label>corporation formal suit</label>
+    <description>...</description>
+    <graphicData>
+      <texPath>TSE/Apparel/Costume/_item</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <costStuffCount>70</costStuffCount>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>160</MaxHitPoints>
+      <WorkToMake>7000</WorkToMake>
+      <Mass>1.7</Mass>
+      <StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.6</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.6</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>3</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <NegotiationAbility>0.1</NegotiationAbility>
+      <TradePriceImprovement>0.05</TradePriceImprovement>
+      <SocialImpact>0.2</SocialImpact>
+      <ResearchSpeed>0.1</ResearchSpeed>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>TSE/Apparel/Costume/Costume</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+        <li>OnSkin</li>
+      </layers>
+      <tags>
+        <li>CorporationFormalSuit</li>
+      </tags>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+  </ThingDef>
+  
+  <!-- Corporation Overalls -->
+  <ThingDef ParentName="TSE_CorpApparel">
+    <defName>TSE_Corp_Overalls</defName>
+    <label>corporation overalls</label>
+    <description>...</description>
+    <graphicData>
+      <texPath>TSE/Apparel/Overalls/_item</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>80</costStuffCount>
+    <statBases>
+      <WorkToMake>9000</WorkToMake>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Mass>1.4</Mass>
+      <Insulation_Cold>5</Insulation_Cold>
+      <Insulation_Heat>5</Insulation_Heat>
+      <ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.15</ArmorRating_Heat>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>TSE/Apparel/Overalls/Overalls</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+      </layers>
+      <tags>
+        <li>CorporationGambeson</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+  
+</Defs>

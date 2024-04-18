@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- Space Marine -->
+    <PawnKindDef ParentName="TSE_BasePawn">
+        <defName>TSE_Corporation_Space_Marine</defName>
+        <label>corporation space marine</label>
+        <initialWillRange>15~30</initialWillRange>
+        <initialResistanceRange>15~30</initialResistanceRange>
+        <apparelRequired>
+            <li>TSE_Corp_MarineArmor</li>
+        </apparelRequired>
+        <weaponTags>
+            <li>CorporationStandardRifle</li>
+        </weaponTags>
+        <disallowedTraits>
+            <li>Brawler</li>
+        </disallowedTraits>
+        <techHediffsRequired>
+            <li>DeathAcidifier</li>
+        </techHediffsRequired>
+        <combatPower>150</combatPower>
+        <skills>
+            <li>
+                <skill>Shooting</skill>
+                <range>7~14</range>
+            </li>
+            <li>
+                <skill>Melee</skill>
+                <range>7~14</range>
+            </li>
+        </skills>
+    </PawnKindDef>
+
+</Defs>

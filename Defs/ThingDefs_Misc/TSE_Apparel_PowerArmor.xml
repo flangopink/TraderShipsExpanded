@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="ApparelArmorPowerBase">
+    <defName>TSE_Corp_MarineArmor</defName>
+    <label>corporation marine armor</label>
+    <description>...</description>
+    <techLevel>Spacer</techLevel>
+    <tradeability>Sellable</tradeability>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>10</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <graphicData>
+      <texPath>TSE/Apparel/Armor/_item</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <WorkToMake>65000</WorkToMake>
+      <Mass>8</Mass>
+      <Flammability>0.1</Flammability>
+      <ArmorRating_Sharp>1.45</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.95</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.95</ArmorRating_Heat>
+    </statBases>
+    <apparel Inherit="False">
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>TSE/Apparel/Armor/Armor</wornGraphicPath>
+      <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>OnSkin</li>
+        <li>Middle</li>
+        <li>Shell</li>
+      </layers>
+      <useDeflectMetalEffect>true</useDeflectMetalEffect>
+      <tags>
+        <li>CorporatePowerArmor</li>
+      </tags>
+	  <!-- this hides the body AND apparel. why isn't there a separate layer for rendering JUST THE FUCKING CLOTHES?
+
+	  <renderSkipFlags>
+		<li>Body</li>
+	  </renderSkipFlags>
+	  -->
+    </apparel>
+    <tradeTags>
+      <li>TSE_Corporation</li>
+    </tradeTags>
+  </ThingDef>
+</Defs>

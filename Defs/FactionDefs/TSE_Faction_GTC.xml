@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <FactionDef ParentName="FactionBase">
+        <defName>TSE_Faction_GTC</defName>
+        <label>Galaxy Trading Corp</label>
+        <description>...</description>
+        <pawnSingular>Corporate goon</pawnSingular>
+        <pawnsPlural>Corporate goons</pawnsPlural>
+        <fixedLeaderKinds>
+            <li>TSE_Corporation_Executive_Director</li>
+        </fixedLeaderKinds>
+        <hidden>false</hidden>
+        <fixedName>Galaxy Trading Corp</fixedName>
+        <settlementGenerationWeight>0.2</settlementGenerationWeight>
+        <requiredCountAtGameStart>1</requiredCountAtGameStart>
+        <allowedArrivalTemperatureRange>-10~65</allowedArrivalTemperatureRange>
+        <maxConfigurableAtWorldCreation>5</maxConfigurableAtWorldCreation>
+        <configurationListOrderPriority>100</configurationListOrderPriority>
+        <canSiege>false</canSiege>
+        <canStageAttacks>true</canStageAttacks>
+        <permanentEnemy>false</permanentEnemy>
+        <leaderTitle>Executive Director</leaderTitle>
+        <techLevel>Spacer</techLevel>
+		
+        <factionNameMaker>TSE_FactionNamer</factionNameMaker>
+        <settlementNameMaker>TSE_SettlementNamer</settlementNameMaker>
+		
+        <factionIconPath>TSE/Factions/Icon</factionIconPath>
+        <settlementTexturePath>TSE/Factions/Icon</settlementTexturePath>
+		
+		<colorSpectrum>
+			<li>(1.0, 1.0, 1.0)</li>
+			
+			<li>(1.0, 0.9, 0.9)</li>
+			<li>(0.9, 1.0, 0.9)</li>
+			<li>(0.9, 0.9, 1.0)</li>
+			
+			<li>(0.9, 0.9, 0.9)</li>
+			
+			<li>(1.0, 0.8, 0.8)</li>
+			<li>(0.8, 1.0, 0.8)</li>
+			<li>(0.8, 0.8, 1.0)</li>
+			
+			<li>(0.9, 0.8, 0.8)</li>
+			<li>(0.8, 0.9, 0.8)</li>
+			<li>(0.8, 0.8, 0.9)</li>
+			
+			<li>(0.8, 0.8, 0.8)</li>
+			
+			<li>(1.0, 0.7, 0.7)</li>
+			<li>(0.7, 1.0, 0.7)</li>
+			<li>(0.7, 0.7, 1.0)</li>
+			
+			<li>(0.8, 0.7, 0.7)</li>
+			<li>(0.7, 0.8, 0.7)</li>
+			<li>(0.7, 0.7, 0.8)</li>
+			
+			<li>(0.7, 0.7, 0.7)</li>
+		</colorSpectrum>
+		
+        <backstoryFilters>
+		  <li>
+			<categories>
+			  <li>Offworld</li>
+			</categories>
+			<commonality>0.60</commonality>
+		  </li>
+		  <li>
+			<categories>
+			  <li>Outlander</li>
+			</categories>
+			<commonality>0.40</commonality>
+		  </li>
+        </backstoryFilters>
+		
+        <earliestRaidDays>45</earliestRaidDays>
+        <autoFlee>true</autoFlee>
+        <raidCommonalityFromPointsCurve>
+            <points>
+                <li>(0, 1)</li>
+            </points>
+        </raidCommonalityFromPointsCurve>
+        <maxPawnCostPerTotalPointsCurve>
+            <points>
+                <li>(0,0)</li>
+                <li>(400, 150)</li>
+                <li>(1000, 250)</li>
+                <li>(2000, 500)</li>
+                <li>(5000, 1200)</li>
+                <li>(10000, 2000)</li>
+                <li>(100000, 5000)</li>
+            </points>
+        </maxPawnCostPerTotalPointsCurve>
+        <pawnGroupMakers>
+            <li>
+                <kindDef>Combat</kindDef>
+                <commonality>100</commonality>
+                <options>
+                    <TSE_Corporation_Space_Marine>3</TSE_Corporation_Space_Marine>
+                    <TSE_Corporation_Slave>1</TSE_Corporation_Slave>
+                </options>
+            </li>
+            <li>
+                <kindDef>Settlement</kindDef>
+                <options>
+                    <TSE_Corporation_Space_Marine>4</TSE_Corporation_Space_Marine>
+                    <TSE_Corporation_Slave>1</TSE_Corporation_Slave>
+                </options>
+            </li>
+            <li>
+                <kindDef>Trader</kindDef>
+                <traders>
+                    <TSE_Corporation_Manager>1</TSE_Corporation_Manager>
+                </traders>
+                <carriers>
+                    <TSE_Corporation_Slave>1</TSE_Corporation_Slave>
+                </carriers>
+                <guards>
+                    <TSE_Corporation_Space_Marine>2</TSE_Corporation_Space_Marine>
+                </guards>
+            </li>
+            <li>
+                <kindDef>Peaceful</kindDef>
+                <options>
+                    <TSE_Corporation_Space_Marine>20</TSE_Corporation_Space_Marine>
+                    <TSE_Corporation_Slave>8</TSE_Corporation_Slave>
+                    <TSE_Corporation_Manager>1</TSE_Corporation_Manager>
+                </options>
+            </li>
+        </pawnGroupMakers>
+        <!-- Traders -->
+        <caravanTraderKinds>
+            <li>TSE_MiningDepartment</li>
+            <li>TSE_MilitaryDepartment</li>
+            <li>TSE_MedicalDepartment</li>
+            <li>TSE_ProductionDepartment</li>
+        </caravanTraderKinds>
+        <visitorTraderKinds>
+            <li>TSE_MiningDepartment</li>
+            <li>TSE_MilitaryDepartment</li>
+            <li>TSE_MedicalDepartment</li>
+            <li>TSE_ProductionDepartment</li>
+        </visitorTraderKinds>
+        <baseTraderKinds>
+            <li>TSE_MiningDepartment</li>
+            <li>TSE_MilitaryDepartment</li>
+            <li>TSE_MedicalDepartment</li>
+            <li>TSE_ProductionDepartment</li>
+        </baseTraderKinds>
+        <disallowedRaidAgeRestrictions>
+            <li MayRequire="Ludeon.RimWorld.Biotech">Children</li>
+        </disallowedRaidAgeRestrictions>
+    </FactionDef>
+
+    <RulePackDef>
+        <defName>TSE_FactionNamer</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>r_name->Galaxy Trading Corp</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+    <RulePackDef>
+        <defName>TSE_SettlementNamer</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>r_name->Trader Outpost [Letters]</li>
+            </rulesStrings>
+            <rulesRaw>
+                <li Class="Rule_File">
+                    <keyword>Letters</keyword>
+                    <path>NameBanks/TSE_SettlementName</path>
+                </li>
+            </rulesRaw>
+        </rulePack>
+    </RulePackDef>
+
+</Defs>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+ <!-- ==================================================================== -->
+ <!-- please remind me to update this when VVE is updated for 1.5, thanks. -->
+ <!-- ==================================================================== -->
+
+<Defs>
+	<ThingDef Name="TSE_WreckBase" ParentName="NonDeconstructibleAncientBuildingBase" Abstract="True">
+		<rotatable>false</rotatable>
+		<fillPercent>0.5</fillPercent>
+		<castEdgeShadows>false</castEdgeShadows>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<statBases>
+		  <MaxHitPoints>6000</MaxHitPoints>
+		  <Flammability>0</Flammability>
+		</statBases>
+		<tradeTags>
+			<li>TSE_ShipWreck</li> <!-- used for GenStep for crash sites and stuff -->
+		</tradeTags>
+	</ThingDef>
+	
+	<ThingDef ParentName="TSE_WreckBase">
+		<defName>TSE_Wreck_Swordfish</defName>
+		<label>small cargo ship wreck</label>
+		<description>...</description>
+		<graphicData>
+		  <texPath>TSE/Ships/Swordfish/Swordfish_wreck</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+		  <shadowData>
+			<volume>(6, 1, 2)</volume>
+			<offset>(-1, 0, -1)</offset>
+		  </shadowData>
+		  <drawSize>(11,5)</drawSize>
+		</graphicData>
+		<size>(11,4)</size>
+		<killedLeavingsRanges>
+		  <ChunkSlagSteel>4~8</ChunkSlagSteel>
+		  <Steel>20~50</Steel>
+		  <Plasteel>20~50</Plasteel>
+		  <ComponentIndustrial>2~5</ComponentIndustrial>
+		  <ComponentSpacer>1</ComponentSpacer>
+		</killedLeavingsRanges>
+		<comps>
+			<li MayRequire="OskarPotocki.VanillaVehiclesExpanded" 
+			    Class="VanillaVehiclesExpanded.CompProperties_VehicleWreck">
+				<vehicleDef>TSE_Vehicle_Swordfish</vehicleDef>
+				<spawnRotation>East</spawnRotation>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="TSE_WreckBase">
+		<defName>TSE_Wreck_Mace</defName>
+		<label>medium cargo ship wreck</label>
+		<description>...</description>
+		<graphicData>
+		  <texPath>TSE/Ships/Mace/Mace_wreck</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+		  <shadowData>
+			<volume>(8, 1, 4)</volume>
+			<offset>(-0.6, 0, -0.4)</offset>
+		  </shadowData>
+		  <drawSize>(15,7)</drawSize>
+		  <drawOffset>(0,0,0.6)</drawOffset>
+		</graphicData>
+		<size>(13,5)</size>
+		<killedLeavingsRanges>
+		  <ChunkSlagSteel>5~9</ChunkSlagSteel>
+		  <Steel>30~60</Steel>
+		  <Plasteel>40~60</Plasteel>
+		  <ComponentIndustrial>3~6</ComponentIndustrial>
+		  <ComponentSpacer>1</ComponentSpacer>
+		</killedLeavingsRanges>
+		<comps>
+			<li MayRequire="OskarPotocki.VanillaVehiclesExpanded" 
+			    Class="VanillaVehiclesExpanded.CompProperties_VehicleWreck">
+				<vehicleDef>TSE_Vehicle_Mace</vehicleDef>
+				<spawnRotation>East</spawnRotation>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="TSE_WreckBase">
+		<defName>TSE_Wreck_Mule</defName>
+		<label>large cargo ship wreck</label>
+		<description>...</description>
+		<graphicData>
+		  <texPath>TSE/Ships/Mule/Mule_wreck</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+		  <shadowData>
+			<volume>(9, 1, 5)</volume>
+			<offset>(0, 0, -1)</offset>
+		  </shadowData>
+		  <drawSize>(14,9)</drawSize>
+		</graphicData>
+		<size>(14,7)</size>
+		<killedLeavingsRanges>
+		  <ChunkSlagSteel>8~12</ChunkSlagSteel>
+		  <Steel>40~80</Steel>
+		  <Plasteel>60~90</Plasteel>
+		  <ComponentIndustrial>5~8</ComponentIndustrial>
+		  <ComponentSpacer>1~2</ComponentSpacer>
+		</killedLeavingsRanges>
+		<comps>
+			<li MayRequire="OskarPotocki.VanillaVehiclesExpanded" 
+			    Class="VanillaVehiclesExpanded.CompProperties_VehicleWreck">
+				<vehicleDef>TSE_Vehicle_Mule</vehicleDef>
+				<spawnRotation>East</spawnRotation>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="TSE_WreckBase">
+		<defName>TSE_Wreck_Tortoise</defName>
+		<label>galactic cargo ship wreck</label>
+		<description>...</description>
+		<graphicData>
+		  <texPath>TSE/Ships/Tortoise/Tortoise_wreck</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <shaderType>CutoutComplex</shaderType>
+		  <shadowData>
+			<volume>(13, 1, 7)</volume>
+			<offset>(0, 0, -1)</offset>
+		  </shadowData>
+		  <drawSize>(17,11)</drawSize>
+		</graphicData>
+		<size>(17,9)</size>
+		<killedLeavingsRanges>
+		  <ChunkSlagSteel>12~16</ChunkSlagSteel>
+		  <Steel>60~100</Steel>
+		  <Plasteel>80~120</Plasteel>
+		  <ComponentIndustrial>6~12</ComponentIndustrial>
+		  <ComponentSpacer>2~3</ComponentSpacer>
+		</killedLeavingsRanges>
+		<comps>
+			<li MayRequire="OskarPotocki.VanillaVehiclesExpanded" 
+			    Class="VanillaVehiclesExpanded.CompProperties_VehicleWreck">
+				<vehicleDef>TSE_Vehicle_Tortoise</vehicleDef>
+				<spawnRotation>East</spawnRotation>
+			</li>
+		</comps>
+	</ThingDef>
+	
+</Defs>  

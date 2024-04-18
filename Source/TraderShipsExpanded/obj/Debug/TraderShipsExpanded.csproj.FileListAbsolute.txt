@@ -1,0 +1,8 @@
+C:\Users\flango\source\repos\TraderShipsExpanded\TraderShipsExpanded\bin\Debug\TraderShipsExpanded.dll
+C:\Users\flango\source\repos\TraderShipsExpanded\TraderShipsExpanded\bin\Debug\TraderShipsExpanded.pdb
+C:\Users\flango\source\repos\TraderShipsExpanded\TraderShipsExpanded\obj\Debug\TraderShipsExpanded.csproj.AssemblyReference.cache
+C:\Users\flango\source\repos\TraderShipsExpanded\TraderShipsExpanded\obj\Debug\TraderShipsExpanded.csproj.CoreCompileInputs.cache
+C:\Users\flango\source\repos\TraderShipsExpanded\TraderShipsExpanded\obj\Debug\TraderShipsExpanded.dll
+C:\Users\flango\source\repos\TraderShipsExpanded\TraderShipsExpanded\obj\Debug\TraderShipsExpanded.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\___TraderShipsExpanded\Assemblies\TraderShipsExpanded.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\___TraderShipsExpanded\Assemblies\TraderShipsExpanded.pdb

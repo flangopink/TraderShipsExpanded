@@ -4,14 +4,53 @@
 	<TSE_Goods>goods</TSE_Goods> <!-- placeholder for bad labels -->
 	<TSE_TraderShip>{0} ship</TSE_TraderShip> <!-- "combat supplier trader ship" -->
 	
+	<TSE_TraderNameInQuotes>«{0}»</TSE_TraderNameInQuotes>
+	
+	<TSE_TraderShipLabel>Trader ship</TSE_TraderShipLabel>
 	<TSE_TraderShipNamed>Trader ship: «{0}»</TSE_TraderShipNamed>
 	<TSE_TraderShipLeavingIn>Trader ship leaving in: {0}.</TSE_TraderShipLeavingIn>
 	
 	<TSE_TraderShipArrival_LetterHeader>Trader ship arrived</TSE_TraderShipArrival_LetterHeader>
-	<TSE_TraderShipArrival_LetterDesc>A trader ship of the «{0}» {1} has arrived.\n\n{2}</TSE_TraderShipArrival_LetterDesc>
+	<TSE_TraderShipArrival_LetterDesc>A trader ship of «{0}» {1} has arrived.\n\n{2}</TSE_TraderShipArrival_LetterDesc>
+	<TSE_TraderShipArrival_LetterDescFaction>A trader ship of {0} {1} has arrived.\n\n{2}</TSE_TraderShipArrival_LetterDescFaction>
 	
-	<TSE_TraderShipLeavingDueToDamage>«{0}» trader ship is leaving due to damage.</TSE_TraderShipLeavingDueToDamage>
+	<TSE_TraderShipLeaving>{0} trader ship is leaving.</TSE_TraderShipLeaving>
+	<TSE_TraderShipLeavingDueToDamage>{0} trader ship is leaving due to damage.</TSE_TraderShipLeavingDueToDamage>
+	
 	<TSE_TraderShipSendAway>Send away</TSE_TraderShipSendAway>
 	<TSE_TraderShipSendAwayDesc>Send the trader ship away.</TSE_TraderShipSendAwayDesc>
+	
+	<TSE_CannotTradeReason>{0} cannot trade. Reason: {1}</TSE_CannotTradeReason>
 
+	<TSE_TraderShipGreeting>{0} greets {1} and asks what they can do to help you.</TSE_TraderShipGreeting>
+	<TSE_RequestTraderShip>Request a trade ship</TSE_RequestTraderShip>
+	<TSE_RequestSpecificTraderShip>Request {0} (cost: {1} silver)</TSE_RequestSpecificTraderShip>
+	<TSE_ChooseTraderShipKind>{0} asks what kind of trade ship you want.</TSE_ChooseTraderShipKind>
+	<TSE_TraderShipSent>{0} agrees to send you a trade ship.</TSE_TraderShipSent>
+	<TSE_ShipWillArriveInHours>It will arrive in {0}.</TSE_ShipWillArriveInHours>
+	<TSE_RequestOnCooldown>available in {0}</TSE_RequestOnCooldown>
+	<TSE_TraderIsNowAvailable>{0} is now available for ship requests.</TSE_TraderIsNowAvailable>
+	
+	<TSE_ShipLandingArea>Ship landing area</TSE_ShipLandingArea>
+	<TSE_ShipLandingAreaDescription>Create a designated area for trader ships to land.</TSE_ShipLandingAreaDescription>
+	<TSE_ShipLandingAreaClear>Clear ship landing area</TSE_ShipLandingAreaClear>
+	<TSE_ShipLandingAreaClearDescription>Clear a ship landing area. Trader ships will no longer land in this area.</TSE_ShipLandingAreaClearDescription>
+	
+	<TSE_ShipLandingAreaBlocked>The ship landing area is blocked by {0}. The trader ship will land somewhere near the colony.</TSE_ShipLandingAreaBlocked>
+	<TSE_NoShipLandingAreaFound>No ship landing areas found. The trader ship will land somewhere near the colony.</TSE_NoShipLandingAreaFound>
+	<TSE_ShipLandingFailed>The trader ship has arrived, but failed to land. It will return back into orbit.</TSE_ShipLandingFailed>
+	
+	<TSE_ShipCrashWantsRecruit>Survivor wants to join</TSE_ShipCrashWantsRecruit>
+	<TSE_ShipCrashWantsRecruitDesc>{0}, the ship crash survivor, thanks you for the help and is willing to join your colony.\n\nWill you accept?</TSE_ShipCrashWantsRecruitDesc>
+	
+	<TSE_RecruitOpportunityExpired>Opportunity expired. This pawn is no longer available.</TSE_RecruitOpportunityExpired>
+	
+	<!-- Rescuee joins -->
+	
+	<!-- {PAWN_nameDef} {PAWN_pronoun} - he, {PAWN_objective} - him, {PAWN_possessive} - his -->
+	
+	<TSE_WantsToJoinDesc>{PAWN_nameDef} is thankful that you have arrived to the crash site in time and offers you {PAWN_possessive} help in return.\n\n{PAWN_pronoun} is giving you some time to decide whether you want {PAWN_objective} to join your colony before eventually going off.</TSE_WantsToJoinDesc>
+	<TSE_WantsToJoinAfterDefenseDesc>{PAWN_nameDef} is thankful that you rescued {PAWN_objective}. In return, {PAWN_pronoun} offers you {PAWN_possessive} help and is willing to join {FACTION_name}.\n\n{PAWN_pronoun} is giving you some time to decide whether you want {PAWN_objective} to join your colony before eventually going off.</TSE_WantsToJoinAfterDefenseDesc>
+
+	
 </LanguageData>

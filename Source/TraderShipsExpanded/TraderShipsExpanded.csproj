@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.props" Condition="Exists('..\packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5FC2E8B1-DB59-4734-B3D2-3A3763B0836F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TraderShipsExpanded</RootNamespace>
+    <AssemblyName>TraderShipsExpanded</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\..\Program Files %28x86%29\Steam\steamapps\common\RimWorld\Mods\___TraderShipsExpanded\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Publicize Include="Assembly-CSharp:RimWorld.TradeShip.things" />
+    <Publicize Include="Assembly-CSharp:RimWorld.TradeShip.soldPrisoners" />
+    <Publicize Include="Assembly-CSharp:Verse.PawnRenderTree.nodesByTag" />
+    <Publicize Include="Assembly-CSharp:Verse.PawnRenderTree.TrySetupGraphIfNeeded" />
+    <Publicize Include="Assembly-CSharp:Verse.PawnRenderNode.graphic" />
+    <Publicize Include="Assembly-CSharp:Verse.PawnRenderer.DefaultRenderFlagsNow" />
+    <Publicize Include="Assembly-CSharp:Verse.AI.Group.LordJob_DefendPoint.point" />
+    <Publicize Include="Assembly-CSharp:Verse.AI.Group.LordJob_DefendPoint.wanderRadius" />
+    <Publicize Include="Assembly-CSharp:Verse.AI.Group.LordJob_DefendPoint.defendRadius" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HotSwap">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\HotSwap-1.5\Assemblies\HotSwap.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Beacons\BeaconTest.cs" />
+    <Compile Include="Ships\Area_ShipLandingArea.cs" />
+    <Compile Include="Quests\ChoiceLetter_AcceptJoinerWithBio.cs" />
+    <Compile Include="Ships\CompProperties_TraderShip.cs" />
+    <Compile Include="Ships\CompTraderShip.cs" />
+    <Compile Include="Ships\Designator_ShipLandingArea.cs" />
+    <Compile Include="Quests\GenStep_GetFactionForQuest.cs" />
+    <Compile Include="Quests\GenStep_TraderShipPirateRaid.cs" />
+    <Compile Include="Quests\GenStep_WoundedShipPersonnel.cs" />
+    <Compile Include="Quests\GenStep_ShipCrashSite.cs" />
+    <Compile Include="Quests\QuestNode_GeneratePawnOfFaction.cs" />
+    <Compile Include="Quests\SitePartWorker_Generic.cs" />
+    <Compile Include="Incidents\IncidentWorker_CargoShipCrash.cs" />
+    <Compile Include="Ships\JobDriver_TradeWithShip.cs" />
+    <Compile Include="Ships\LandedShip.cs" />
+    <Compile Include="Quests\LordJob_DefendPointThenLeave.cs" />
+    <Compile Include="Quests\LordToil_DefendPointThenLeave.cs" />
+    <Compile Include="TraderCompany\OrbitingCompany.cs" />
+    <Compile Include="TraderCompany\Patch_GetCommTargets.cs" />
+    <Compile Include="Ships\QueuedTradeShip.cs" />
+    <Compile Include="TraderCompany\TraderDialogMaker.cs" />
+    <Compile Include="TraderCompany\TraderCompanyDef.cs" />
+    <Compile Include="TraderCompany\TSEOrbitalCompanyManager.cs" />
+    <Compile Include="TSE_DefOf.cs" />
+    <Compile Include="TSE_DevTools.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="Incidents\IncidentWorker_TraderShipCrash.cs" />
+    <Compile Include="Beacons\ModExt_CustomTradeBeacon.cs" />
+    <Compile Include="Beacons\PlaceWorker_ShowCustomTradeBeaconRadius.cs" />
+    <Compile Include="Beacons\Transpiler_TradeableCellsAround.cs" />
+    <Compile Include="TSE_Harmony.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.props'))" />
+    <Error Condition="!Exists('..\packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.targets'))" />
+  </Target>
+  <Import Project="..\packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.targets" Condition="Exists('..\packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.targets')" />
+</Project>
