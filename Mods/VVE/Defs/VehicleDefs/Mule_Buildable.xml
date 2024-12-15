@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>TSE_Vehicle_Mule_Blueprint</defName>
+		<label>Mule</label>
+		<description>...</description>
+		
+		<graphicData>
+			<texPath>TSE/Ships/Mule/Vehicle/Mule</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(9,14)</drawSize>
+			<!-- placeholder for drawOffset -->
+		</graphicData>
+		<size>(7,14)</size>
+		
+		<statBases>
+			<WorkToBuild>120000</WorkToBuild>
+			<MaxHitPoints>2500</MaxHitPoints>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		
+		<!-- big ship -->
+		<costList>
+			<VVE_EngineBlock>24</VVE_EngineBlock>
+			<VVE_CarAlternator>32</VVE_CarAlternator>
+			<VVE_CarExhaust>24</VVE_CarExhaust>
+			<VVE_CarSuspension>24</VVE_CarSuspension>
+			<VVE_CarWheel>4</VVE_CarWheel>
+			<Steel>1600</Steel>
+			<Plasteel>500</Plasteel>
+			<ComponentIndustrial>36</ComponentIndustrial>
+			<VVE_CarFuelTank>16</VVE_CarFuelTank>
+			<VVE_CarTransmission>24</VVE_CarTransmission>
+			<VVE_CarRadiator>8</VVE_CarRadiator>
+			<VVE_CarWiring>24</VVE_CarWiring>
+			<VVE_CarBattery>16</VVE_CarBattery>
+		</costList>
+		
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>TSE_Vehicle_Mule</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+</Defs>

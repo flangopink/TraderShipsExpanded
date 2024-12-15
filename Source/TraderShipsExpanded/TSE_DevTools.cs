@@ -53,14 +53,14 @@ namespace TraderShipsExpanded
                 list.Add(new DebugActionNode(def.defName, DebugActionType.Action, delegate ()
                 {
                     var faction = Find.FactionManager.RandomNonHostileFaction();
-                    Log.Message(faction.ToString());
+                    //Log.Message(faction.ToString());
                     Utils.TryCallInTraderShip(Find.CurrentMap, def, null, faction);
                 }));
             }
             return list;
         }
 
-        [DebugAction("Trader Ships Expanded", "Log passing ships", allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        /*[DebugAction("Trader Ships Expanded", "Log passing ships", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         public static void LogPassingShips()
         {
             var allShips = Find.CurrentMap.passingShipManager.passingShips;
@@ -78,15 +78,14 @@ namespace TraderShipsExpanded
 
             Log.Message($"Total passing ships: {allShipsCount}\nRegular passing ships: {regularShipsCount}\nTSE landed ships: {TSELandedShipsCount}\nTSE company ships: {TSEShipsCount}");
             Log.Message(sb.ToString());
-        }
+        }*/
 
         [DebugAction("Trader Ships Expanded", "Skip all cooldowns", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         public static void SkipAllCooldowns()
         {
             foreach (OrbitingCompany company in Find.CurrentMap.GetComponent<TSEOrbitalCompanyManager>().Companies)
             {
-                if (company.cooldownTicks > 0)
-                    company.cooldownTicks = 1;
+                if (company.cooldownTicks > 0) company.cooldownTicks = 1;
             }
         }
 

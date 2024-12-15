@@ -12,10 +12,7 @@ namespace TraderShipsExpanded
         public override void Generate(Map map, GenStepParams parms)
         {
             IntVec3 shipPos = IntVec3.Invalid;
-            TraderKindDef traderKind = DefDatabase<TraderKindDef>.AllDefsListForReading.Where(x => x.faction == TSE_DefOf.TSE_Faction_GTC).RandomElement();
-            var makerParams = default(ThingSetMakerParams);
-            makerParams.traderDef = traderKind;
-            List<Thing> things = ThingSetMakerDefOf.TraderStock.root.Generate(makerParams);
+            List<Thing> things = Utils.GetRandomTraderStock(TSE_DefOf.TSE_Faction_GTC);
 
             int num = 2;
             while (shipPos == IntVec3.Invalid)

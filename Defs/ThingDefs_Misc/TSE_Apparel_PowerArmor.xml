@@ -1,57 +1,118 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <ThingDef ParentName="ApparelArmorPowerBase">
+  <ThingDef ParentName="TSE_CorpApparelPower">
     <defName>TSE_Corp_MarineArmor</defName>
     <label>corporation marine armor</label>
     <description>...</description>
-    <techLevel>Spacer</techLevel>
-    <tradeability>Sellable</tradeability>
-    <recipeMaker>
-      <skillRequirements>
-        <Crafting>10</Crafting>
-      </skillRequirements>
-    </recipeMaker>
     <graphicData>
       <texPath>TSE/Apparel/Armor/_item</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <statBases>
-      <WorkToMake>65000</WorkToMake>
-      <Mass>8</Mass>
-      <Flammability>0.1</Flammability>
-      <ArmorRating_Sharp>1.45</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.95</ArmorRating_Blunt>
-      <ArmorRating_Heat>0.95</ArmorRating_Heat>
-    </statBases>
-    <apparel Inherit="False">
-      <bodyPartGroups>
-        <li>Torso</li>
-        <li>Neck</li>
-        <li>Shoulders</li>
-        <li>Arms</li>
-        <li>Legs</li>
-      </bodyPartGroups>
+	<apparel>
       <wornGraphicPath>TSE/Apparel/Armor/Armor</wornGraphicPath>
-      <useWornGraphicMask>true</useWornGraphicMask>
-      <layers>
-        <li>OnSkin</li>
-        <li>Middle</li>
-        <li>Shell</li>
-      </layers>
-      <useDeflectMetalEffect>true</useDeflectMetalEffect>
-      <tags>
-        <li>CorporatePowerArmor</li>
-      </tags>
-	  <!-- this hides the body AND apparel. why isn't there a separate layer for rendering JUST THE FUCKING CLOTHES?
-
-	  <renderSkipFlags>
-		<li>Body</li>
-	  </renderSkipFlags>
-	  -->
-    </apparel>
-    <tradeTags>
-      <li>TSE_Corporation</li>
-    </tradeTags>
+	  <tags>
+		<li>EVA</li> <!-- make it a viable "spacesuit" for rimnauts -->
+	  </tags>
+	</apparel>
+    <costList>
+      <ComponentSpacer>5</ComponentSpacer> <!-- someone will tweak the recipe and stats later. maybe. -->
+      <Plasteel>150</Plasteel>
+      <Uranium>30</Uranium>
+    </costList>
+    <statBases>
+      <WorkToMake>70000</WorkToMake>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Mass>15</Mass>
+      <Flammability>0.1</Flammability>
+      <ArmorRating_Sharp>1.40</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.90</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.90</ArmorRating_Heat>
+      <Insulation_Cold>40</Insulation_Cold>
+      <Insulation_Heat>20</Insulation_Heat>
+    </statBases>
   </ThingDef>
+  
+  <ThingDef ParentName="TSE_CorpApparelPower_Hat">
+    <defName>TSE_Corp_MarineArmorHelmet</defName>
+    <label>corporation marine helmet</label>
+    <description>...</description>
+    <graphicData>
+      <texPath>TSE/Apparel/Helmet/_item</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
+    </graphicData>
+    <apparel>
+      <wornGraphicPath>TSE/Apparel/Helmet/Helmet</wornGraphicPath>
+      <tags>
+		<li>EVA</li> <!-- make it a viable "spacesuit" for rimnauts -->
+      </tags>
+      <renderSkipFlags>
+        <li>None</li>
+      </renderSkipFlags>
+    </apparel>
+    <costList>
+      <ComponentSpacer>2</ComponentSpacer>  <!-- someone will tweak the recipe and stats later. maybe. -->
+      <Plasteel>60</Plasteel>
+    </costList>
+    <statBases>
+      <WorkToMake>35000</WorkToMake>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Mass>3</Mass>
+      <Flammability>0.1</Flammability>
+      <ArmorRating_Sharp>1.40</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.75</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.75</ArmorRating_Heat>
+      <Insulation_Cold>10</Insulation_Cold>
+      <Insulation_Heat>5</Insulation_Heat>
+    </statBases>
+	<comps>
+	  <li><compClass>CompStyleable</compClass></li>
+	  <li Class="TraderShipsExpanded.CompProperties_ForcedStyle">
+		<styleDef>TSE_EnableTransparency_Helmet</styleDef>
+	  </li>
+	</comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="TSE_CorpApparelPower_Hat">
+    <defName>TSE_Corp_BubbleHelmet</defName>
+    <label>corporation bubble helmet</label>
+    <description>...</description>
+    <graphicData>
+      <texPath>TSE/Apparel/Helmet/Bubble/_item</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
+    </graphicData>
+    <apparel>
+      <wornGraphicPath>TSE/Apparel/Helmet/Bubble/HelmetBubble</wornGraphicPath>
+      <tags>
+		<li>EVA</li> <!-- make it a viable "spacesuit" for rimnauts -->
+      </tags>
+      <renderSkipFlags>
+        <li>None</li>
+      </renderSkipFlags>
+    </apparel>
+    <costList>
+      <ComponentSpacer>1</ComponentSpacer>  <!-- someone will tweak the recipe and stats later. maybe. -->
+      <Plasteel>30</Plasteel>
+    </costList>
+    <statBases>
+      <WorkToMake>25000</WorkToMake>
+      <MaxHitPoints>125</MaxHitPoints>
+      <Mass>2</Mass>
+      <Flammability>0.1</Flammability>
+      <ArmorRating_Sharp>0.80</ArmorRating_Sharp> <!-- i have no fucking clue what stats this one should have. -->
+      <ArmorRating_Blunt>0.50</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.60</ArmorRating_Heat>
+      <Insulation_Cold>10</Insulation_Cold>
+      <Insulation_Heat>10</Insulation_Heat>
+    </statBases>
+	<comps>
+	  <li><compClass>CompStyleable</compClass></li>
+	  <li Class="TraderShipsExpanded.CompProperties_ForcedStyle">
+		<styleDef>TSE_EnableTransparency_Bubble</styleDef>
+	  </li>
+	</comps>
+  </ThingDef>
+  
 </Defs>

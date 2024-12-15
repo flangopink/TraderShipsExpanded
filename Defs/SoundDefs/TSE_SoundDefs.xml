@@ -66,4 +66,26 @@
     <priorityMode>PrioritizeNearest</priorityMode>
   </SoundDef>
 
+  <SoundDef>
+    <defName>TSE_VehicleEngineRocket</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>VehicleEngineRocket_Sustainer</clipPath>
+          </li>
+        </grains>      
+        <pitchRange>1.2~1.25</pitchRange>
+        <volumeRange>70~75</volumeRange>
+        <sustainAttack>2.5</sustainAttack>      
+        <sustainRelease>2.5</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+
 </Defs>

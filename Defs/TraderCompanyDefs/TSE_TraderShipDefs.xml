@@ -5,6 +5,8 @@
 		<iconPath>TSE/Factions/Icon</iconPath>
 		<iconColor>(255,255,100)</iconColor>
 		<shipThingDefs>
+			<li>TSE_TraderShip_Cutlass</li>
+			<li>TSE_TraderShip_Cargo</li>
 			<li>TSE_TraderShip_Swordfish</li>
 			<li>TSE_TraderShip_Mule</li>
 			<li>TSE_TraderShip_Mace</li>
@@ -34,6 +36,8 @@
 		<factionDef>TSE_Faction_GTC</factionDef>
 		<shipThingDefs>
 			<li>TSE_TraderShip_Tortoise</li> <!-- ADD THE SHIP THINGIE -->
+			<li>TSE_TraderShip_TortoiseNew</li>
+			<li>TSE_TraderShip_Cargo</li>
 			<!--
 			<li>TSE_TraderShip_Swordfish</li>
 			<li>TSE_TraderShip_Mule</li>

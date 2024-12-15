@@ -1,34 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <ThingDef Name="TSE_CorpApparel" ParentName="ApparelMakeableBase" Abstract="True">
-    <techLevel>Industrial</techLevel>
-    <stuffCategories>
-      <li>Fabric</li>
-      <li>Leathery</li>
-    </stuffCategories>
-    <recipeMaker>
-      <researchPrerequisite>ComplexClothing</researchPrerequisite>
-      <displayPriority>445</displayPriority>
-    </recipeMaker>
-    <tradeTags>
-      <li>TSE_Corporation</li>
-    </tradeTags>
-  </ThingDef>
-  
-  <ThingDef Name="TSE_CorpApparel_Hat" ParentName="HatMakeableBase" Abstract="True">
-    <techLevel>Industrial</techLevel>
-    <stuffCategories>
-      <li>Fabric</li>
-      <li>Leathery</li>
-    </stuffCategories>
-    <recipeMaker>
-      <researchPrerequisite>ComplexClothing</researchPrerequisite>
-      <displayPriority>444</displayPriority>
-    </recipeMaker>
-    <tradeTags>
-      <li>TSE_Corporation</li>
-    </tradeTags>
-  </ThingDef>
 
   <!-- Corporation Formal Suit -->
   <ThingDef ParentName="TSE_CorpApparel">
@@ -47,7 +18,7 @@
     <statBases>
       <MaxHitPoints>160</MaxHitPoints>
       <WorkToMake>7000</WorkToMake>
-      <Mass>1.7</Mass>
+      <Mass>2</Mass>
       <StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
       <StuffEffectMultiplierInsulation_Cold>0.6</StuffEffectMultiplierInsulation_Cold>
       <StuffEffectMultiplierInsulation_Heat>0.6</StuffEffectMultiplierInsulation_Heat>

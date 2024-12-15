@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef Name="TSE_CorpApparel" ParentName="ApparelMakeableBase" Abstract="True">
+    <generateCommonality>0.5</generateCommonality>
+    <techLevel>Industrial</techLevel>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <recipeMaker>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <displayPriority>445</displayPriority>
+    </recipeMaker>
+    <tradeTags>
+      <li>TSE_Corporation</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <ThingDef Name="TSE_CorpApparel_Hat" ParentName="HatMakeableBase" Abstract="True">
+    <generateCommonality>0.5</generateCommonality>
+    <techLevel>Industrial</techLevel>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <recipeMaker>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <displayPriority>444</displayPriority>
+    </recipeMaker>
+    <tradeTags>
+      <li>TSE_Corporation</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <ThingDef Name="TSE_CorpApparelPower" ParentName="ApparelArmorPowerBase" Abstract="True">
+    <generateCommonality>0.1</generateCommonality>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>10</Crafting>
+      </skillRequirements>
+      <displayPriority>447</displayPriority>
+    </recipeMaker>
+    <apparel>
+      <tags>
+        <li>CorporatePowerArmor</li>
+        <li>PowerArmorBody</li>
+      </tags>
+	  <!-- this hides the body AND apparel. why isn't there a separate layer for rendering JUST THE FUCKING CLOTHES?
+	  <renderSkipFlags>
+		<li>Body</li>
+	  </renderSkipFlags>
+	  -->
+    </apparel>
+    <tradeTags>
+      <li>TSE_Corporation</li>
+    </tradeTags>
+    <thingSetMakerTags>
+      <li>RewardStandardLowFreq</li>
+    </thingSetMakerTags>
+  </ThingDef>
+  
+  <ThingDef Name="TSE_CorpApparelPower_Hat" ParentName="ApparelArmorHelmetPowerBase" Abstract="True">
+    <generateCommonality>0.1</generateCommonality>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>10</Crafting>
+      </skillRequirements>
+      <displayPriority>446</displayPriority>
+    </recipeMaker>
+    <apparel>
+      <tags>
+        <li>CorporatePowerArmor</li>
+        <li>PowerArmorHelmet</li>
+      </tags>
+    </apparel>
+    <tradeTags>
+      <li>Armor</li>
+      <li>TSE_Corporation</li>
+    </tradeTags>
+    <thingSetMakerTags>
+      <li>RewardStandardLowFreq</li>
+    </thingSetMakerTags>
+  </ThingDef>
+  
+</Defs>

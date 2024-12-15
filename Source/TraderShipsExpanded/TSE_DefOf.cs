@@ -10,6 +10,8 @@ namespace TraderShipsExpanded
 
         public static FactionDef TSE_Faction_GTC;
 
+        public static TraderCompanyDef TSE_Company_GalaxyTrader;
+
         public static HediffDef DeathAcidifier; // yep. it's not in vanilla DefOf.
 
         public static LetterDef TSE_AcceptJoinerWithBio;

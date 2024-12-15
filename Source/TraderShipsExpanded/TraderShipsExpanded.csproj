@@ -46,29 +46,37 @@
     <Publicize Include="Assembly-CSharp:Verse.AI.Group.LordJob_DefendPoint.point" />
     <Publicize Include="Assembly-CSharp:Verse.AI.Group.LordJob_DefendPoint.wanderRadius" />
     <Publicize Include="Assembly-CSharp:Verse.AI.Group.LordJob_DefendPoint.defendRadius" />
+    <Publicize Include="Assembly-CSharp:Verse.Thing.positionInt" />
+    <Publicize Include="Assembly-CSharp:Verse.SectionLayer.section" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="HotSwap">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\HotSwap-1.5\Assemblies\HotSwap.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\HotSwap-master\Assemblies\HotSwap.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Beacons\BeaconTest.cs" />
+    <Compile Include="CompForcedStyle.cs" />
+    <Compile Include="Storage\CompHideStoredItems.cs" />
+    <Compile Include="Storage\ModExt_HideStoredItems.cs" />
+    <Compile Include="Quests\GenStep_LandedShip.cs" />
+    <Compile Include="Quests\LordJob_DefendShip.cs" />
+    <Compile Include="Quests\LordToil_DefendShip.cs" />
     <Compile Include="Ships\Area_ShipLandingArea.cs" />
     <Compile Include="Quests\ChoiceLetter_AcceptJoinerWithBio.cs" />
     <Compile Include="Ships\CompProperties_TraderShip.cs" />
@@ -76,7 +84,7 @@
     <Compile Include="Ships\Designator_ShipLandingArea.cs" />
     <Compile Include="Quests\GenStep_GetFactionForQuest.cs" />
     <Compile Include="Quests\GenStep_TraderShipPirateRaid.cs" />
-    <Compile Include="Quests\GenStep_WoundedShipPersonnel.cs" />
+    <Compile Include="Quests\GenStep_ShipPersonnel.cs" />
     <Compile Include="Quests\GenStep_ShipCrashSite.cs" />
     <Compile Include="Quests\QuestNode_GeneratePawnOfFaction.cs" />
     <Compile Include="Quests\SitePartWorker_Generic.cs" />
@@ -85,16 +93,17 @@
     <Compile Include="Ships\LandedShip.cs" />
     <Compile Include="Quests\LordJob_DefendPointThenLeave.cs" />
     <Compile Include="Quests\LordToil_DefendPointThenLeave.cs" />
+    <Compile Include="Storage\Patch_HideStoredItems.cs" />
     <Compile Include="TraderCompany\OrbitingCompany.cs" />
     <Compile Include="TraderCompany\Patch_GetCommTargets.cs" />
     <Compile Include="Ships\QueuedTradeShip.cs" />
     <Compile Include="TraderCompany\TraderDialogMaker.cs" />
     <Compile Include="TraderCompany\TraderCompanyDef.cs" />
     <Compile Include="TraderCompany\TSEOrbitalCompanyManager.cs" />
+    <Compile Include="TSE_Cache.cs" />
     <Compile Include="TSE_DefOf.cs" />
     <Compile Include="TSE_DevTools.cs" />
     <Compile Include="Utils.cs" />
-    <Compile Include="Incidents\IncidentWorker_TraderShipCrash.cs" />
     <Compile Include="Beacons\ModExt_CustomTradeBeacon.cs" />
     <Compile Include="Beacons\PlaceWorker_ShowCustomTradeBeaconRadius.cs" />
     <Compile Include="Beacons\Transpiler_TradeableCellsAround.cs" />

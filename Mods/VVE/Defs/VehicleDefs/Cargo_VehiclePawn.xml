@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleDef ParentName="TSE_VehiclePawn_Base">
+		<defName>TSE_Vehicle_Cargo</defName>
+		<label>Cargo</label>
+		<description>...</description>
+		
+		<graphicData>
+			<texPath>TSE/Ships/Cargo/Vehicle/Cargo</texPath>
+			<drawSize>(5,11)</drawSize>
+		</graphicData>
+		
+		<size>(4,11)</size>
+		
+		<buildDef>TSE_Vehicle_Cargo_Blueprint</buildDef>
+		
+		<statBases>
+			<ArmorRating_Blunt>0.30</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.50</ArmorRating_Sharp>
+			<ArmorRating_Heat>1.0</ArmorRating_Heat>
+			<MarketValue>18000</MarketValue>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		
+		<vehicleStats>
+			<Mass>800</Mass>
+			<MoveSpeed LockSetting="True">0.5</MoveSpeed>
+			<CargoCapacity>10000</CargoCapacity>
+			<RepairRate>1</RepairRate>
+			<FlightSpeed>5</FlightSpeed>
+		</vehicleStats>
+		
+		<race>
+			<baseBodySize>2</baseBodySize>
+		</race>
+
+		<properties>
+			<vehicleJobLimitations>
+				<li>(RepairVehicle, 4)</li>
+			</vehicleJobLimitations>
+			<roles>
+				<li>
+					<key>pilot</key>
+					<label>Pilot</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
+					<hitbox>
+						<cells>
+							<li>(4, 0)</li>
+						</cells>
+					</hitbox>
+				</li>
+				<li>
+					<key>passenger</key>
+					<label>Passenger</label>
+					<slots>1</slots>
+					<hitbox>
+						<cells>
+							<li>(4, -1)</li>
+						</cells>
+					</hitbox>
+				</li>
+				
+			</roles>
+		</properties>
+		
+		<comps>
+			<li Class="Vehicles.CompProperties_FueledTravel">
+				<fuelType>Chemfuel</fuelType> <!-- Must Include -->
+				<fuelConsumptionRate>75</fuelConsumptionRate>
+				<fuelCapacity>700</fuelCapacity>
+			</li>
+		</comps>
+	</Vehicles.VehicleDef>
+</Defs>

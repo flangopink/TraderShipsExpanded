@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
+using System.Security.Policy;
 using RimWorld;
 using RimWorld.QuestGen;
 using Verse;
@@ -17,6 +17,8 @@ namespace TraderShipsExpanded
         
         public SlateRef<bool> mustBeNonHostileToPlayer;
 
+        public SlateRef<bool> eitherThisFactionOrRandom;
+
         protected override bool TestRunInt(Slate slate)
         {
             if (slate.TryGet<Pawn>(storeAs.GetValue(slate), out var var) && IsGoodPawn(var, slate))
@@ -31,7 +33,14 @@ namespace TraderShipsExpanded
             Slate slate = QuestGen.slate;
             if (!QuestGen.slate.TryGet<Pawn>(storeAs.GetValue(slate), out var pawn) || !IsGoodPawn(pawn, slate))
             {
-                pawn = GeneratePawn(slate, Find.FactionManager.FirstFactionOfDef(factionDef.GetValue(slate)));
+                Faction faction;
+                if (factionDef.GetValue(slate) != null && !(eitherThisFactionOrRandom.GetValue(slate) && Rand.Chance(0.5f))) // i hope i didn't mess this up
+                {
+                    faction = Find.FactionManager.FirstFactionOfDef(factionDef.GetValue(slate));
+                }
+                else faction = Find.FactionManager.RandomNonHostileFaction(minTechLevel: TechLevel.Industrial);
+
+                pawn = GeneratePawn(slate, faction);
 
                 if (QuestGen.quest.TryGetFirstPartOfType<QuestPart_InvolvedFactions>(out _))
                 {

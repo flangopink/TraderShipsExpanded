@@ -23,10 +23,10 @@
     <uiIconPath>TSE/UI/Empty</uiIconPath>
 	
     <killedLeavings>
-      <Steel>100</Steel>
-      <Plasteel>200</Plasteel>
-      <ComponentIndustrial>12</ComponentIndustrial>
-      <ComponentSpacer>4</ComponentSpacer>
+      <Steel>40</Steel>
+      <Plasteel>40</Plasteel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
     </killedLeavings>
     <altitudeLayer>Building</altitudeLayer>
     <fillPercent>1.0</fillPercent>
@@ -62,8 +62,42 @@
 	
   </ThingDef>
   
-  
 
+  <!-- T0 - Shuttle -->
+  <ThingDef ParentName="TraderShipBuildingBase">
+    <defName>TSE_TraderShip_Cutlass</defName>
+    <graphicData>
+      <texPath>TSE/Ships/Cutlass/Cutlass</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
+      <shadowData>
+		<volume>(7, 1, 2)</volume>
+		<offset>(0, 0, -0.5)</offset>
+      </shadowData>
+	  <drawSize>(8,4)</drawSize>
+    </graphicData>
+    <size>(8,3)</size>
+    <interactionCellOffset>(-1,0,-2)</interactionCellOffset>
+  </ThingDef>
+
+  <!-- T1 - Cargo -->
+  <ThingDef ParentName="TraderShipBuildingBase">
+    <defName>TSE_TraderShip_Cargo</defName>
+    <graphicData>
+      <texPath>TSE/Ships/Cargo/Cargo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
+      <shadowData>
+        <volume>(7, 1, 2)</volume>
+        <offset>(0, 0, -1)</offset>
+      </shadowData>
+	  <drawSize>(11,5)</drawSize>
+    </graphicData>
+    <size>(11,4)</size>
+    <interactionCellOffset>(4,0,-2)</interactionCellOffset>
+  </ThingDef>
+
+  <!-- T2 - Swordfish -->
   <ThingDef ParentName="TraderShipBuildingBase">
     <defName>TSE_TraderShip_Swordfish</defName>
     <graphicData>
@@ -72,14 +106,15 @@
 	  <shaderType>CutoutComplex</shaderType>
       <shadowData>
         <volume>(6, 1, 2)</volume>
-        <offset>(-1, 0, -1)</offset>
+        <offset>(-1, 0, 0)</offset>
       </shadowData>
-	  <drawSize>(11,5)</drawSize>
+	  <drawSize>(13,6)</drawSize>
     </graphicData>
-    <size>(11,4)</size>
-    <interactionCellOffset>(0,0,-2)</interactionCellOffset>
+    <size>(13,5)</size>
+    <interactionCellOffset>(0,0,-3)</interactionCellOffset>
   </ThingDef>
 
+  <!-- T2.5? - Mace -->
   <ThingDef ParentName="TraderShipBuildingBase">
     <defName>TSE_TraderShip_Mace</defName>
     <graphicData>
@@ -94,9 +129,10 @@
 	  <drawOffset>(0,0,0.6)</drawOffset>
     </graphicData>
     <size>(13,5)</size>
-    <interactionCellOffset>(-3,0,-3)</interactionCellOffset>
+    <interactionCellOffset>(3,0,-3)</interactionCellOffset>
   </ThingDef>
   
+  <!-- T3 - Mule -->
   <ThingDef ParentName="TraderShipBuildingBase">
     <defName>TSE_TraderShip_Mule</defName>
     <graphicData>
@@ -113,6 +149,7 @@
     <interactionCellOffset>(2,0,-4)</interactionCellOffset>
   </ThingDef>
   
+  <!-- T4 - Tortoise -->
   <ThingDef ParentName="TraderShipBuildingBase">
     <defName>TSE_TraderShip_Tortoise</defName>
     <graphicData>
@@ -126,6 +163,23 @@
 	  <drawSize>(17,11)</drawSize>
     </graphicData>
     <size>(17,9)</size>
+    <interactionCellOffset>(-3,0,-5)</interactionCellOffset>
+  </ThingDef>
+  
+  <!-- T4.2 - New Tortoise -->
+  <ThingDef ParentName="TraderShipBuildingBase">
+    <defName>TSE_TraderShip_TortoiseNew</defName>
+    <graphicData>
+      <texPath>TSE/Ships/TortoiseNew/Tortoise</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
+      <shadowData>
+        <volume>(19, 1, 10)</volume>
+        <offset>(0, 0, -1)</offset>
+      </shadowData>
+	  <drawSize>(24,14)</drawSize>
+    </graphicData>
+    <size>(23,12)</size>
     <interactionCellOffset>(-3,0,-5)</interactionCellOffset>
   </ThingDef>
 

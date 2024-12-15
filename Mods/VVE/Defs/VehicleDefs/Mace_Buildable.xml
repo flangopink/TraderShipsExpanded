@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>TSE_Vehicle_Mace_Blueprint</defName>
+		<label>Mace</label>
+		<description>...</description>
+		
+		<graphicData>
+			<texPath>TSE/Ships/Mace/Vehicle/Mace</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(7,15)</drawSize>
+			<drawOffset>(0,0,0.6)</drawOffset>
+		</graphicData>
+		<size>(5,13)</size>
+		
+		<statBases>
+			<WorkToBuild>90000</WorkToBuild>
+			<MaxHitPoints>2000</MaxHitPoints>
+			<Flammability>0.5</Flammability>
+		</statBases>
+
+		<!-- medium ship -->
+		<costList>
+			<VVE_EngineBlock>12</VVE_EngineBlock>
+			<VVE_CarAlternator>24</VVE_CarAlternator>
+			<VVE_CarExhaust>16</VVE_CarExhaust>
+			<VVE_CarSuspension>12</VVE_CarSuspension>
+			<VVE_CarWheel>4</VVE_CarWheel>
+			<Steel>1200</Steel>
+			<Plasteel>400</Plasteel>
+			<ComponentIndustrial>36</ComponentIndustrial>
+			<VVE_CarFuelTank>8</VVE_CarFuelTank>
+			<VVE_CarTransmission>12</VVE_CarTransmission>
+			<VVE_CarRadiator>4</VVE_CarRadiator>
+			<VVE_CarWiring>12</VVE_CarWiring>
+			<VVE_CarBattery>8</VVE_CarBattery>
+		</costList>
+					
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>TSE_Vehicle_Mace</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+</Defs>

@@ -1,17 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+  <ThingDef Name="TSE_CorpWeapon" ParentName="BaseHumanMakeableGun" Abstract="True">
+    <techLevel>Spacer</techLevel>
+	<soundInteract>Interact_ChargeRifle</soundInteract>
+	<recipeMaker>
+      <researchPrerequisite>ChargedShot</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>9</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>FabricationBench</li>
+      </recipeUsers>
+    </recipeMaker>
+	<thingSetMakerTags>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
+    <tradeTags>
+      <li>TSE_Corporation</li>
+    </tradeTags>
+    <weaponClasses>
+      <li>RangedLight</li>
+    </weaponClasses>
+	<comps>
+		<li><compClass>CompColorable</compClass></li>
+	</comps>
+	<colorGenerator Class="ColorGenerator_Options">
+	  <options>
+		<li>
+		  <weight>8</weight>
+		  <only>(0.8,0.8,0.8,1)</only>
+		</li>
+		<li>
+		  <weight>8</weight>
+		  <only>(0.65,0.65,0.65,1)</only>
+		</li>
+		<li>
+		  <weight>8</weight>
+		  <only>(0.5,0.5,0.5,1)</only>
+		</li>
+		<li>
+		  <weight>6</weight>
+		  <min>(0.5,0.5,0.5,1)</min>
+		  <max>(0.7,0.7,0.7,1)</max>
+		</li>
+		<li>
+		  <weight>4</weight>
+		  <only>(0.3,0.3,0.3,1)</only>
+		</li>
+	  </options>
+	</colorGenerator>
+  </ThingDef>
+
   <!-- Corporation Standard Rifle -->
-  <ThingDef ParentName="BaseHumanMakeableGun">
+  <ThingDef ParentName="TSE_CorpWeapon">
     <defName>TSE_Corporation_Standard_Rifle</defName>
     <label>corporation standard rifle</label>
     <description>...</description>
-    <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>TSE/Weapons/CorpRifle</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
     </graphicData>
-    <equippedAngleOffset>-110</equippedAngleOffset>
-    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <equippedAngleOffset>30</equippedAngleOffset>
+    <weaponTags>
+      <li>CorporationStandardRifle</li>
+    </weaponTags>
     <statBases>
       <WorkToMake>45000</WorkToMake>
       <Mass>4.6</Mass>
@@ -21,31 +74,10 @@
       <AccuracyLong>0.5</AccuracyLong>
       <RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
     </statBases>
-    <recipeMaker>
-      <researchPrerequisite>ChargedShot</researchPrerequisite>
-      <skillRequirements>
-        <Crafting>9</Crafting>
-      </skillRequirements>
-      <recipeUsers Inherit="False">
-        <li>FabricationBench</li>
-      </recipeUsers>
-    </recipeMaker>
     <costList>
       <Plasteel>50</Plasteel>
       <ComponentSpacer>2</ComponentSpacer>
     </costList>
-    <thingSetMakerTags>
-      <li>RewardStandardQualitySuper</li>
-    </thingSetMakerTags>
-    <weaponTags>
-      <li>CorporationStandardRifle</li>
-    </weaponTags>
-    <tradeTags>
-      <li>TSE_Corporation</li>
-    </tradeTags>
-    <weaponClasses>
-      <li>RangedLight</li>
-    </weaponClasses>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
@@ -80,6 +112,7 @@
       </li>
     </tools>
   </ThingDef>
+  
   <ThingDef ParentName="BaseBullet">
     <defName>TSE_Bullet_CorporationStandardRifleBullet</defName>
     <label>corporation rifle shot</label>
@@ -94,18 +127,18 @@
       <speed>80</speed>
     </projectile>
   </ThingDef>
+  
   <!-- Corporation Standard Pistol -->
-  <ThingDef ParentName="BaseHumanMakeableGun">
+  <ThingDef ParentName="TSE_CorpWeapon">
     <defName>TSE_Corporation_Standard_Pistol</defName>
     <label>corporation standard pistol</label>
     <description>...</description>
-    <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>TSE/Weapons/CorpPistol</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
     </graphicData>
-    <equippedAngleOffset>-80</equippedAngleOffset>
-    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <equippedAngleOffset>0</equippedAngleOffset>
     <statBases>
       <WorkToMake>30000</WorkToMake>
       <Mass>1.1</Mass>
@@ -115,28 +148,13 @@
       <AccuracyLong>0.35</AccuracyLong>
       <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown>
     </statBases>
-    <recipeMaker>
-      <researchPrerequisite>ChargedShot</researchPrerequisite>
-      <skillRequirements>
-        <Crafting>8</Crafting>
-      </skillRequirements>
-      <recipeUsers Inherit="False">
-        <li>FabricationBench</li>
-      </recipeUsers>
-    </recipeMaker>
     <costList>
       <Plasteel>30</Plasteel>
       <ComponentSpacer>1</ComponentSpacer>
     </costList>
-    <thingSetMakerTags>
-      <li>RewardStandardQualitySuper</li>
-    </thingSetMakerTags>
     <weaponTags>
       <li>CorporationStandardPistol</li>
     </weaponTags>
-    <tradeTags>
-      <li>TSE_Corporation</li>
-    </tradeTags>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
@@ -163,6 +181,7 @@
       </li>
     </tools>
   </ThingDef>
+  
   <ThingDef ParentName="BaseBullet">
     <defName>TSE_Bullet_CorporationStandardPistolBullet</defName>
     <label>corporation pistol shot</label>

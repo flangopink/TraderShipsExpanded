@@ -9,6 +9,7 @@
         <initialResistanceRange>15~30</initialResistanceRange>
         <apparelRequired>
             <li>TSE_Corp_MarineArmor</li>
+            <li>TSE_Corp_MarineArmorHelmet</li>
         </apparelRequired>
         <weaponTags>
             <li>CorporationStandardRifle</li>

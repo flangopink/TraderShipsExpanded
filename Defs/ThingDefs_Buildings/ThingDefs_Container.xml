@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <ThingDef ParentName="StorageShelfBase">
+    <defName>TSE_Container</defName>
+    <label>container</label>
+    <description>...</description>
+    <passability>Impassable</passability>
+	<fillPercent>1</fillPercent>
+    <graphicData>
+      <texPath>TSE/Buildings/Container/Container</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2.5,5)</drawSize>
+    </graphicData>
+    <costStuffCount>200</costStuffCount>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints> 
+      <Mass>50</Mass>
+      <WorkToBuild>3000</WorkToBuild>
+    </statBases>
+    <size>(2,5)</size>
+    <building>
+      <maxItemsInCell>10</maxItemsInCell>
+      <paintable>true</paintable>
+    </building>
+	<comps>
+	  <li>
+	    <compClass>TraderShipsExpanded.CompHideStoredItems</compClass>
+	  </li>
+	</comps>
+  </ThingDef>
+
+</Defs>

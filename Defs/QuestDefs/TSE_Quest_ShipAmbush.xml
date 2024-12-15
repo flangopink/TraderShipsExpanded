@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <QuestScriptDef>
+    <defName>TSE_TraderShipAmbush</defName>
+    <rootSelectionWeight>1.0</rootSelectionWeight>
+    <rootMinPoints>0</rootMinPoints>
+    <autoAccept>true</autoAccept>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[adjective] trader ship</li>
+        <li>adjective->Ambushed</li>
+        <li>adjective->Assaulted</li>
+        <li>adjective->Surrounded</li>
+        <li>adjective->Trapped</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->A trader ship of [asker_faction_name] has made an emergency landing near [map_definite] and it has attracted the attention of pirates. Onboard sensors detect an incoming raid and the ship crew have sent a distress signal seeking reinforcements.
+They offer a reward for anyone who is willing to help them fend off the ambush.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+	<root Class="QuestNode_Sequence">
+		<nodes>
+		  
+			<li Class="QuestNode_SubScript">
+			  <def>Util_RandomizePointsChallengeRating</def>
+			  <parms>
+				<pointsFactorTwoStar>1.5</pointsFactorTwoStar>
+			  </parms>
+			</li>
+			
+			<li Class="QuestNode_SubScript">
+			  <def>Util_GetDefaultRewardValueFromPoints</def>
+			</li>
+			
+			<li Class="QuestNode_SubScript">
+			  <def>Util_AdjustPointsForDistantFight</def>
+			</li>
+			
+			<li Class="QuestNode_GetMap" />
+			
+			<!--
+			<li Class="TraderShipsExpanded.QuestNode_GetFactionForQuest">
+			  <storeAs>faction</storeAs>
+			  <factionDef>TSE_Faction_GTC</factionDef>
+			  <allowAlly>true</allowAlly>
+			  <allowNeutral>true</allowNeutral>
+			</li>
+			-->
+			
+			<li Class="TraderShipsExpanded.QuestNode_GeneratePawnOfFaction">
+			  <storeAs>asker</storeAs>
+			  <mustBeNonHostileToPlayer>true</mustBeNonHostileToPlayer>
+			  <factionDef>TSE_Faction_GTC</factionDef>
+			  <eitherThisFactionOrRandom>true</eitherThisFactionOrRandom>
+			</li>
+
+			<li Class="QuestNode_GetSiteTile">
+			  <storeAs>siteTile</storeAs>
+			  <preferCloserTiles>true</preferCloserTiles>
+			</li>
+
+			<li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+			  <storeAs>sitePartDefs</storeAs>
+			  <storeFactionAs>siteFaction</storeFactionAs>
+			  <sitePartsTags>
+				<li>
+				  <tag>TSE_TraderShipAmbush</tag>
+				</li>
+				<li>
+				  <tag>TSE_CombatShipPersonnel</tag>
+				</li>
+				<li>
+				  <tag>TSE_ShipAmbushPirateRaid</tag>
+				</li>
+			  </sitePartsTags>
+			  <mustBeHostileToFactionOf>$asker</mustBeHostileToFactionOf>
+			</li>
+
+			<li Class="QuestNode_GetDefaultSitePartsParams">
+			  <tile>$siteTile</tile>
+			  <faction>$siteFaction</faction>
+			  <sitePartDefs>$sitePartDefs</sitePartDefs>
+			  <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+			</li>
+
+			<li Class="QuestNode_SubScript">
+			  <def>Util_GenerateSite</def>
+			</li>
+
+			<li Class="QuestNode_SpawnWorldObjects">
+			  <worldObjects>$site</worldObjects>
+			</li>
+
+			<li Class="QuestNode_Signal">
+			  <inSignal>TradeShipDefenseOver</inSignal> 	<!-- please add a reward here. thanks -->
+			  <node Class="QuestNode_Sequence">
+				<nodes>
+				  <li Class="QuestNode_Letter">
+					<letterDef>PositiveEvent</letterDef>
+					<label TKey="LetterLabelQuestExpired">Quest completed: [resolvedQuestName]</label>
+					<text TKey="LetterTextQuestExpired">You arrived at the ship ambush site and defeated the hostiles.</text>
+				  </li>
+				  <li Class="QuestNode_End">
+					<outcome>Success</outcome>
+				  </li>
+				</nodes>
+			  </node>
+			</li>
+
+			<li Class="QuestNode_WorldObjectTimeout">
+			  <worldObject>$site</worldObject>
+			  <isQuestTimeout>true</isQuestTimeout>
+			  <delayTicks>$(randInt(2,4)*60000)</delayTicks>
+			  <inSignalDisable>site.MapGenerated</inSignalDisable>
+			  <node Class="QuestNode_Sequence">
+				<nodes>
+				  <li Class="QuestNode_RandomNode">
+					<nodes>
+					  <li Class="QuestNode_Letter">
+						<label TKey="LetterLabelQuestExpired">Quest expired: [resolvedQuestName]</label>
+						<text TKey="LetterTextQuestExpired">The ship crew have successfully fended off the ambush themselves. The quest [resolvedQuestName] has expired.</text>
+					  </li>
+					  <li Class="QuestNode_Letter">
+						<label TKey="LetterLabelQuestExpired">Quest expired: [resolvedQuestName]</label>
+						<text TKey="LetterTextQuestExpired">The ship crew have been helped by others. The quest [resolvedQuestName] has expired.</text>
+					  </li>
+					  <li Class="QuestNode_Letter">
+						<label TKey="LetterLabelQuestExpired">Quest expired: [resolvedQuestName]</label>
+						<text TKey="LetterTextQuestExpired">The ship crew weren't able to fend off the ambush. The quest [resolvedQuestName] has expired.</text>
+					  </li>
+					</nodes>
+				  </li>
+				  <li Class="QuestNode_End">
+					<outcome>Fail</outcome>
+				  </li>
+				</nodes>
+			  </node>
+			</li>
+
+			<li Class="QuestNode_NoWorldObject">
+			  <worldObject>$site</worldObject>
+			  <node Class="QuestNode_End">
+				<outcome>Success</outcome>
+			  </node>
+			</li>
+			
+		  </nodes>
+		</root>
+	</QuestScriptDef>
+</Defs>

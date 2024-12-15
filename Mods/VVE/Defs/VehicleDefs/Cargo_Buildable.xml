@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>TSE_Vehicle_Cargo_Blueprint</defName>
+		<label>Cargo</label>
+		<description>...</description>
+		
+		<graphicData>
+			<texPath>TSE/Ships/Cargo/Vehicle/Cargo</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(5,11)</drawSize>
+			<!-- placeholder for drawOffset -->
+		</graphicData>
+		
+		<size>(4,11)</size>
+		
+		<statBases>
+			<WorkToBuild>65000</WorkToBuild>
+			<MaxHitPoints>800</MaxHitPoints>
+			<Flammability>0.5</Flammability>
+		</statBases>
+
+		<!-- small ship -->
+		<costList>
+			<VVE_EngineBlock>8</VVE_EngineBlock>
+			<VVE_CarAlternator>16</VVE_CarAlternator>
+			<VVE_CarExhaust>10</VVE_CarExhaust>
+			<VVE_CarSuspension>8</VVE_CarSuspension>
+			<VVE_CarWheel>4</VVE_CarWheel>
+			<Steel>1200</Steel>
+			<Plasteel>280</Plasteel>
+			<ComponentIndustrial>28</ComponentIndustrial>
+			<VVE_CarFuelTank>6</VVE_CarFuelTank>
+			<VVE_CarTransmission>6</VVE_CarTransmission>
+			<VVE_CarRadiator>2</VVE_CarRadiator>
+			<VVE_CarWiring>4</VVE_CarWiring>
+			<VVE_CarBattery>6</VVE_CarBattery>
+		</costList>
+					
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>TSE_Vehicle_Cargo</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+</Defs>

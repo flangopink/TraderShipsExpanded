@@ -12,6 +12,8 @@
     <!--<showFactionInInspectString>true</showFactionInInspectString>--> <!-- wrong faction -->
   </SitePartDef>
 
+	<!-- Ship crash site -->
+
   <SitePartDef ParentName="TSE_SitePartBase">
     <defName>TSE_TraderShipCrash</defName>
     <label>trader ship crash site</label>
@@ -42,12 +44,17 @@
     <defName>TSE_WoundedShipPersonnel</defName>
     <linkWithSite>TSE_WoundedShipPersonnel</linkWithSite>
     <order>700</order> <!-- MUST RUN AFTER PIRATES -->
-    <genStep Class="TraderShipsExpanded.GenStep_WoundedShipPersonnel" />
+    <genStep Class="TraderShipsExpanded.GenStep_ShipPersonnel">
+		<countRange>3~5</countRange>
+		<wounded>true</wounded>
+		<canJoin>true</canJoin>
+		<askerNecessary>true</askerNecessary>
+	</genStep>
   </GenStepDef>
   
   
   <SitePartDef ParentName="TSE_SitePartBase">
-    <defName>TSE_TraderShipPirateRaid</defName>
+    <defName>TSE_CrashSitePirateRaid</defName>
     <label>possible hostile threat</label>
 	<description>...</description>
     <tags>
@@ -58,8 +65,62 @@
     <arrivedLetterDef>NegativeEvent</arrivedLetterDef>
   </SitePartDef>
   <GenStepDef>
-    <defName>TSE_TraderShipPirateRaid</defName>
-    <linkWithSite>TSE_TraderShipPirateRaid</linkWithSite>
+    <defName>TSE_CrashSitePirateRaid</defName>
+    <linkWithSite>TSE_CrashSitePirateRaid</linkWithSite>
+    <order>690</order> <!-- MUST RUN BEFORE ALLIES -->
+    <genStep Class="TraderShipsExpanded.GenStep_TraderShipPirateRaid" />
+  </GenStepDef>
+  
+  
+	<!-- Ship ambush -->
+
+  <SitePartDef ParentName="TSE_SitePartBase">
+    <defName>TSE_TraderShipAmbush</defName>
+    <label>trader ship ambush</label>
+    <description>A trader ship is being ambushed by pirates.</description>
+    <tags>
+      <li>TSE_TraderShipAmbush</li>
+    </tags>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>TSE_TraderShipAmbush</defName>
+    <linkWithSite>TSE_TraderShipAmbush</linkWithSite>
+    <order>680</order>
+    <genStep Class="TraderShipsExpanded.GenStep_LandedShip" />
+  </GenStepDef>
+
+
+  <SitePartDef ParentName="TSE_SitePartBase">
+    <defName>TSE_CombatShipPersonnel</defName>
+    <label>ship personnel present</label>
+	<description>...</description>
+    <tags>
+      <li>TSE_CombatShipPersonnel</li>
+    </tags>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>TSE_CombatShipPersonnel</defName>
+    <linkWithSite>TSE_CombatShipPersonnel</linkWithSite>
+    <order>700</order> <!-- MUST RUN AFTER PIRATES -->
+    <genStep Class="TraderShipsExpanded.GenStep_ShipPersonnel">
+		<countRange>1~3</countRange>
+		<combatOnly>true</combatOnly>
+		<defendShip>true</defendShip>
+	</genStep>
+  </GenStepDef>
+  
+  
+  <SitePartDef ParentName="TSE_SitePartBase">
+    <defName>TSE_ShipAmbushPirateRaid</defName>
+    <label>hostile threat present</label>
+	<description>...</description>
+    <tags>
+      <li>TSE_ShipAmbushPirateRaid</li>
+    </tags>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>TSE_ShipAmbushPirateRaid</defName>
+    <linkWithSite>TSE_ShipAmbushPirateRaid</linkWithSite>
     <order>690</order> <!-- MUST RUN BEFORE ALLIES -->
     <genStep Class="TraderShipsExpanded.GenStep_TraderShipPirateRaid" />
   </GenStepDef>

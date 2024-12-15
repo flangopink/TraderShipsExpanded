@@ -4,9 +4,12 @@
 		<xpath>/Defs/VFECore.ObjectSpawnsDef[defName="VVE_AllMaps_VehicleWrecks"]/thingDefs</xpath>
 		<value>
 			<TSE_Vehicle_Swordfish>0.8</TSE_Vehicle_Swordfish>
+			<TSE_Vehicle_Cutlass>0.75</TSE_Vehicle_Cutlass>
+			<TSE_Vehicle_Cargo>0.7</TSE_Vehicle_Cargo>
 			<TSE_Vehicle_Mace>0.6</TSE_Vehicle_Mace>
 			<TSE_Vehicle_Mule>0.4</TSE_Vehicle_Mule>
 			<TSE_Vehicle_Tortoise>0.2</TSE_Vehicle_Tortoise>
+			<TSE_Vehicle_TortoiseNew>0.1</TSE_Vehicle_TortoiseNew>
 		</value>
 	</Operation>
 	
@@ -14,9 +17,12 @@
 		<xpath>/Defs/VFECore.ObjectSpawnsDef[defName="VVE_DirtPath_VehicleWrecks"]/thingDefs</xpath>
 		<value>
 			<TSE_Vehicle_Swordfish>0.8</TSE_Vehicle_Swordfish>
+			<TSE_Vehicle_Cutlass>0.75</TSE_Vehicle_Cutlass>
+			<TSE_Vehicle_Cargo>0.7</TSE_Vehicle_Cargo>
 			<TSE_Vehicle_Mace>0.6</TSE_Vehicle_Mace>
 			<TSE_Vehicle_Mule>0.4</TSE_Vehicle_Mule>
 			<TSE_Vehicle_Tortoise>0.2</TSE_Vehicle_Tortoise>
+			<TSE_Vehicle_TortoiseNew>0.1</TSE_Vehicle_TortoiseNew>
 		</value>
 	</Operation>
 	
@@ -24,9 +30,12 @@
 		<xpath>/Defs/VFECore.ObjectSpawnsDef[defName="VVE_DirtRoad_VehicleWrecks"]/thingDefs</xpath>
 		<value>
 			<TSE_Vehicle_Swordfish>0.8</TSE_Vehicle_Swordfish>
+			<TSE_Vehicle_Cutlass>0.75</TSE_Vehicle_Cutlass>
+			<TSE_Vehicle_Cargo>0.7</TSE_Vehicle_Cargo>
 			<TSE_Vehicle_Mace>0.6</TSE_Vehicle_Mace>
 			<TSE_Vehicle_Mule>0.4</TSE_Vehicle_Mule>
 			<TSE_Vehicle_Tortoise>0.2</TSE_Vehicle_Tortoise>
+			<TSE_Vehicle_TortoiseNew>0.1</TSE_Vehicle_TortoiseNew>
 		</value>
 	</Operation>
 	
@@ -34,9 +43,12 @@
 		<xpath>/Defs/VFECore.ObjectSpawnsDef[defName="VVE_StoneRoad_VehicleWrecks"]/thingDefs</xpath>
 		<value>
 			<TSE_Vehicle_Swordfish>0.8</TSE_Vehicle_Swordfish>
+			<TSE_Vehicle_Cutlass>0.75</TSE_Vehicle_Cutlass>
+			<TSE_Vehicle_Cargo>0.7</TSE_Vehicle_Cargo>
 			<TSE_Vehicle_Mace>0.6</TSE_Vehicle_Mace>
 			<TSE_Vehicle_Mule>0.4</TSE_Vehicle_Mule>
 			<TSE_Vehicle_Tortoise>0.2</TSE_Vehicle_Tortoise>
+			<TSE_Vehicle_TortoiseNew>0.1</TSE_Vehicle_TortoiseNew>
 		</value>
 	</Operation>
 	
@@ -44,9 +56,12 @@
 		<xpath>/Defs/VFECore.ObjectSpawnsDef[defName="VVE_AncientAsphaltRoad_VehicleWrecks"]/thingDefs</xpath>
 		<value>
 			<TSE_Vehicle_Swordfish>0.8</TSE_Vehicle_Swordfish>
+			<TSE_Vehicle_Cutlass>0.75</TSE_Vehicle_Cutlass>
+			<TSE_Vehicle_Cargo>0.7</TSE_Vehicle_Cargo>
 			<TSE_Vehicle_Mace>0.6</TSE_Vehicle_Mace>
 			<TSE_Vehicle_Mule>0.4</TSE_Vehicle_Mule>
 			<TSE_Vehicle_Tortoise>0.2</TSE_Vehicle_Tortoise>
+			<TSE_Vehicle_TortoiseNew>0.1</TSE_Vehicle_TortoiseNew>
 		</value>
 	</Operation>
 	
@@ -54,9 +69,12 @@
 		<xpath>/Defs/VFECore.ObjectSpawnsDef[defName="VVE_AncientAsphaltHighway_VehicleWrecks"]/thingDefs</xpath>
 		<value>
 			<TSE_Vehicle_Swordfish>0.8</TSE_Vehicle_Swordfish>
+			<TSE_Vehicle_Cutlass>0.75</TSE_Vehicle_Cutlass>
+			<TSE_Vehicle_Cargo>0.7</TSE_Vehicle_Cargo>
 			<TSE_Vehicle_Mace>0.6</TSE_Vehicle_Mace>
 			<TSE_Vehicle_Mule>0.4</TSE_Vehicle_Mule>
 			<TSE_Vehicle_Tortoise>0.2</TSE_Vehicle_Tortoise>
+			<TSE_Vehicle_TortoiseNew>0.1</TSE_Vehicle_TortoiseNew>
 		</value>
 	</Operation>
 </Patch>  

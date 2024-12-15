@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>TSE_Vehicle_Tortoise_Blueprint</defName>
+		<label>Tortoise</label>
+		<description>...</description>
+		
+		<graphicData>
+			<texPath>TSE/Ships/Tortoise/Vehicle/Tortoise</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(11,17)</drawSize>
+			<!-- placeholder for drawOffset -->
+		</graphicData>
+		<size>(9,17)</size>
+		
+		<statBases>
+			<WorkToBuild>180000</WorkToBuild>
+			<MaxHitPoints>3500</MaxHitPoints>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		
+		<!-- huge ship -->
+		<costList>
+			<VVE_EngineBlock>32</VVE_EngineBlock>
+			<VVE_CarAlternator>40</VVE_CarAlternator>
+			<VVE_CarExhaust>32</VVE_CarExhaust>
+			<VVE_CarSuspension>32</VVE_CarSuspension>
+			<VVE_CarWheel>8</VVE_CarWheel>
+			<Steel>2400</Steel>
+			<Plasteel>700</Plasteel>
+			<ComponentIndustrial>40</ComponentIndustrial>
+			<VVE_CarFuelTank>24</VVE_CarFuelTank>
+			<VVE_CarTransmission>32</VVE_CarTransmission>
+			<VVE_CarRadiator>12</VVE_CarRadiator>
+			<VVE_CarWiring>32</VVE_CarWiring>
+			<VVE_CarBattery>24</VVE_CarBattery>
+		</costList>
+		
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>TSE_Vehicle_Tortoise</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+</Defs>

@@ -51,10 +51,10 @@
     <costList>
       <ComponentIndustrial>3</ComponentIndustrial>
     </costList>
+	<passability>PassThroughOnly</passability>
     <building>
-		<isEdifice>true</isEdifice> <!-- for faster range checking -->
-        <destroySound>BuildingDestroyed_Metal_Small</destroySound>
-		<passability>PassThroughOnly</passability>
+	  <isEdifice>true</isEdifice> <!-- for faster range checking -->
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
 	</building>
     <comps>
       <li Class="CompProperties_Power">
@@ -112,10 +112,10 @@
     <costList>
       <ComponentIndustrial>5</ComponentIndustrial>
     </costList>
+    <passability>PassThroughOnly</passability>
     <building>
 	  <isEdifice>true</isEdifice> <!-- for faster range checking -->
       <destroySound>BuildingDestroyed_Metal_Big</destroySound>
-      <passability>Impassable</passability>
     </building>
     <comps>
       <li Class="CompProperties_Power">
@@ -132,7 +132,7 @@
         <ignoreWalls>true</ignoreWalls>
       </li>
 	</modExtensions>
-    <pathCost>100</pathCost>
+    <pathCost>300</pathCost> <!-- yeah just don't climb over it ok? -->
     <placeWorkers>
       <li>TraderShipsExpanded.PlaceWorker_ShowCustomTradeBeaconRadius</li>
       <li>PlaceWorker_NotUnderRoof</li>

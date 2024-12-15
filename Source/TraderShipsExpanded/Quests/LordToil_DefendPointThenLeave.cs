@@ -3,7 +3,6 @@ using System.Linq;
 using Verse.AI;
 using Verse;
 using Verse.AI.Group;
-using RimWorld.Planet;
 
 namespace TraderShipsExpanded
 {
@@ -60,7 +59,7 @@ namespace TraderShipsExpanded
             // Defense over
             if (!isOver)
             {
-                var thisQuest = Find.QuestManager.QuestsListForReading.Find((Quest q) => q.QuestLookTargets.Any((GlobalTargetInfo look) => look.HasWorldObject && Find.World.worldObjects.ObjectsAt(Map.Tile).Contains(look.WorldObject)));
+                Quest thisQuest = Utils.GetQuest(Map);
 
                 for (int j = 0; j < lord.ownedPawns.Count; j++)
                 {
@@ -70,7 +69,7 @@ namespace TraderShipsExpanded
                         // pawn.SetFaction(Faction.OfPlayer);
                         // Find.LetterStack.ReceiveLetter("TSE_ShipCrashRecruitSuccess".Translate(), "TSE_ShipCrashRecruitSuccessDesc".Translate(pawn.Label), LetterDefOf.PositiveEvent, new LookTargets(p));
                         // Log.Message("Recruitment roll for " + pawn.Label + "... Success!"); 
-                        Utils.SendLetterJoinerWithBio(pawn);
+                        Utils.SendLetterJoinerWithBio(pawn, true);
                     }
                     //else
                     //{

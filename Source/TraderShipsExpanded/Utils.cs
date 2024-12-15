@@ -1,6 +1,8 @@
 ﻿using RimWorld;
+using RimWorld.Planet;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 using Verse;
 
 namespace TraderShipsExpanded
@@ -10,13 +12,19 @@ namespace TraderShipsExpanded
     public static class Utils
     {
         public static List<TraderCompanyDef> AllTraderCompanyDefs;
-        public static List<ThingDef> AllShipWrecks;
+        public static List<ThingDef> AllShipWrecks = [];
+        public static List<ThingDef> AllShipDefs = [];
         public static IEnumerable<FloatMenuOption> FloatMenuOptions;
+        public static Texture2D QuestionMarkIcon = ContentFinder<Texture2D>.Get("UI/Overlays/QuestionMark");
 
         static Utils()
         {
             AllTraderCompanyDefs = DefDatabase<TraderCompanyDef>.AllDefsListForReading;
-            AllShipWrecks = DefDatabase<ThingDef>.AllDefsListForReading.Where(x => x.defName.Contains("TSE_Wreck_")).ToList();
+            foreach (ThingDef def in DefDatabase<ThingDef>.AllDefsListForReading)
+            {
+                if (def.defName.Contains("TSE_TraderShip_")) AllShipDefs.Add(def);
+                else if (def.defName.Contains("TSE_Wreck_")) AllShipWrecks.Add(def);
+            }
         }
 
         public static int GetNextID(ref int nextID) // why the fuck would you make this one private but not the others
@@ -39,23 +47,33 @@ namespace TraderShipsExpanded
             }
             return result;
         }
+        public static ThingDef GetRandomShipDef() => AllShipDefs.RandomElement();
 
-        /*public static ThingDef GetRandomShipDef()
-        {
-            return DefDatabase<ThingDef>.AllDefsListForReading.Where(x => x.tradeTags.Contains("TSE_Ship")).RandomElement();
-        }*/
+        public static ThingDef GetRandomShipWreckDef() => AllShipWrecks.RandomElement();
 
-        public static ThingDef GetRandomShipWreckDef()
+        public static List<Thing> GetRandomTraderStock(FactionDef factionDef)
         {
-            return AllShipWrecks.RandomElement();
+            var makerParams = default(ThingSetMakerParams);
+            makerParams.traderDef = DefDatabase<TraderKindDef>.AllDefsListForReading.Where(x => x.faction == factionDef).RandomElement(); ;
+            return ThingSetMakerDefOf.TraderStock.root.Generate(makerParams);
         }
 
-        public static PawnGroupMaker GetShipPersonnel()
+        public static List<Thing> GetTraderStock(TraderKindDef traderKindDef)
         {
-            return TSE_DefOf.TSE_Faction_GTC.pawnGroupMakers.Where(x => x.kindDef == PawnGroupKindDefOf.Trader).FirstOrDefault();
+            var makerParams = default(ThingSetMakerParams);
+            makerParams.traderDef = traderKindDef;
+            return ThingSetMakerDefOf.TraderStock.root.Generate(makerParams);
         }
 
-        public static PawnKindDef GetRandomShipPersonnelPawnKind(PawnGroupMaker personnel)
+        public static PawnGroupMaker GetTraderPawnGroupMaker(FactionDef factionDef = null)
+        {
+            factionDef ??= TSE_DefOf.TSE_Faction_GTC;
+            return factionDef.pawnGroupMakers.Where(x => x.kindDef == PawnGroupKindDefOf.Trader).FirstOrDefault();
+        }
+
+        public static Quest GetQuest(Map map) => Find.QuestManager.QuestsListForReading.Find((Quest q) => q.QuestLookTargets.Any((GlobalTargetInfo look) => look.HasWorldObject && Find.World.worldObjects.ObjectsAt(map.Tile).Contains(look.WorldObject)));
+
+        public static PawnKindDef GetRandomShipPersonnelPawnKind(PawnGroupMaker personnel, bool combatOnly = false)
         {
             if (personnel == null) 
             {
@@ -63,20 +81,27 @@ namespace TraderShipsExpanded
                 return null; 
             }
 
-            var rand = Rand.Value;
-            return rand switch
+            if (combatOnly)
             {
-                // 20% for slave
-                var _ when rand < 0.2 => personnel.carriers.RandomElement().kind,
+                return personnel.guards.RandomElement().kind;
+            }
+            else
+            {
+                var rand = Rand.Value;
+                return rand switch
+                {
+                    // 20% for slave
+                    var _ when rand < 0.2 => personnel.carriers.RandomElement().kind,
 
-                // 30% for manager
-                var _ when rand < 0.5 => personnel.traders.RandomElement().kind,
+                    // 30% for manager
+                    var _ when rand < 0.5 => personnel.traders.RandomElement().kind,
 
-                // 50% for marine, because someone's gotta keep the trader secure, right?
-                var _ when rand < 1 => personnel.guards.RandomElement().kind,
+                    // 50% for marine, because someone's gotta keep the trader secure, right?
+                    var _ when rand < 1 => personnel.guards.RandomElement().kind,
 
-                _ => null,
-            };
+                    _ => null,
+                };
+            }
         }
 
         public static DamageDef RandomViolenceDamageTypeNoBullet()
@@ -110,7 +135,7 @@ namespace TraderShipsExpanded
             //Log.Message("...Done! " + letter.ToString() + letter.Label.ToString() + letter.Text.ToString());
         }
 
-        public static bool TryCallInTraderShip(Map map, TraderCompanyDef def, TraderKindDef kindDef = null, Faction faction = null, bool stationary = false, bool onMouse = false)
+        public static bool TryCallInTraderShip(Map map, TraderCompanyDef def, TraderKindDef kindDef = null, Faction faction = null, bool stationary = false, bool onMouse = false, IntVec3? atCell = null, bool questShip = false)
         {
             ThingDef shipThingDef = def.shipThingDefs.RandomElement();
             Thing thing = ThingMaker.MakeThing(shipThingDef, null);
@@ -120,6 +145,10 @@ namespace TraderShipsExpanded
 
             CompTraderShip comp = thing.TryGetComp<CompTraderShip>();
             comp.GenerateInternalTradeShip(map, kindDef ?? def.TraderKinds.RandomElement().traderKindDef, def.shipDepartureTicks);
+            if (questShip)
+            {
+                comp.isQuestShip = true;
+            }
             Skyfaller skyfaller = stationary ? null : SkyfallerMaker.MakeSkyfaller(comp.Props.landAnimation, thing);
 
             if (skyfaller != null)
@@ -128,7 +157,7 @@ namespace TraderShipsExpanded
                 skyfaller.DrawColor = thing.DrawColor;
             }
 
-            IntVec3 landingCell = (stationary || onMouse) ? UI.MouseCell() : GetBestShipLandingSpot(map, thing);
+            IntVec3 landingCell = (stationary || onMouse) ? (atCell != null ? (IntVec3)atCell : UI.MouseCell()) : GetBestShipLandingSpot(map, thing);
 
             GenSpawn.CheckMoveItemsAside(landingCell, default, shipThingDef, map);
 
@@ -223,6 +252,22 @@ namespace TraderShipsExpanded
                 }
                 if (!intVec.IsValid) Messages.Message("TSE_ShipLandingFailed".Translate(), MessageTypeDefOf.NegativeEvent);
             }
+        }
+
+        public static bool DrawStoredItems(Thing thing, Map map)
+        {
+            if (thing.def.category == ThingCategory.Item)
+            {
+                Building edifice = thing.positionInt.GetEdifice(map);
+                if (edifice != null)
+                {
+                    if (TSE_Cache.hiddenStorageDefs.Contains(edifice.def))
+                    {
+                        return TSE_Cache.storageCache[edifice];
+                    }
+                }
+            }
+            return true;
         }
     }
 }

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ResearchTabDef>
+		<defName>Vehicles</defName>
+		<label>Vehicles</label>
+	</ResearchTabDef>
+	
+	
+	<ResearchProjectDef Name="TSE_ShipProjectBase" Abstract="True">
+		<tab>Vehicles</tab>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+		  <li>VVE_ComplexVehicles</li>
+		</prerequisites>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+		  <li>MultiAnalyzer</li>
+		</requiredResearchFacilities>		
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="TSE_ShipProjectBase">
+		<defName>TSE_Research_LightShips</defName>
+		<label>Light Cargo Ships</label>
+		<description>Learn to build the Swordfish cargo ship and the Cutlass transport shuttle for carrying cargo and troops over long distances.</description>
+		<baseCost>5000</baseCost>
+		<researchViewX>1.00</researchViewX>
+		<researchViewY>4.00</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="TSE_ShipProjectBase">
+		<defName>TSE_Research_HeavyShips</defName>
+		<label>Heavy Cargo Ships</label>
+		<description>Learn to build the Mace and the Mule cargo ships for carrying large amounts of cargo over long distances.</description>
+		<baseCost>5000</baseCost>
+		<researchViewX>1.00</researchViewX>
+		<researchViewY>5.00</researchViewY>
+		<prerequisites>
+		  <li>TSE_Research_LightShips</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="TSE_ShipProjectBase">
+		<defName>TSE_Research_SuperHeavyShips</defName>
+		<label>Tortoise Cargo Ship</label>
+		<description>Learn to build the Tortoise cargo ship, capable of carrying enormous amounts of cargo and people over long distances.</description>
+		<baseCost>5000</baseCost>
+		<researchViewX>1.00</researchViewX>
+		<researchViewY>6.00</researchViewY>
+		<prerequisites>
+		  <li>TSE_Research_HeavyShips</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+</Defs>

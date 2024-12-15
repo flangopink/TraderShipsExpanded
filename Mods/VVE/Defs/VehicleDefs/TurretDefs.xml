@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+		<!-- Cannon turret -->
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
+		<defName>TSE_Turret_Cannon</defName>
+		<label>light cannon turret</label>
+		<description>...</description>
+		<turretType>Rotatable</turretType>
+		<shotSound>VVE_Shot_MarshalCannonSound</shotSound>
+		<reloadSound>VVE_RoadkillReloadSound</reloadSound>
+		
+		<projectile>TSE_Bullet_Turret_Cannon</projectile>
+		<reloadTimer>3</reloadTimer>
+		<warmUpTimer>1.2</warmUpTimer>
+		<chargePerAmmoCount>0.5</chargePerAmmoCount>
+		
+		<magazineCapacity>100</magazineCapacity>
+		<genericAmmo>true</genericAmmo>
+		
+		<hitFlags>IntendedTarget</hitFlags>
+		
+		<autoSnapTargeting>true</autoSnapTargeting>
+		<rotationSpeed>1.5</rotationSpeed>
+		
+		<projectileOffset>2.25</projectileOffset>
+		
+		<minRange>2.9</minRange>
+		<maxRange>29.9</maxRange>
+		
+		<recoil>
+			<distanceTotal>0.15</distanceTotal>
+			<distancePerTick>0.05</distancePerTick>
+			<speedMultiplierPostRecoil>0.1</speedMultiplierPostRecoil>
+		</recoil>
+		
+		<attachProjectileFlag>VVE_Tank</attachProjectileFlag>
+		
+		<fireModes>
+			<li>
+				<shotsPerBurst>4</shotsPerBurst>
+				<ticksBetweenShots>12</ticksBetweenShots>
+				<ticksBetweenBursts>120</ticksBetweenBursts>
+				<burstsTillWarmup>3</burstsTillWarmup>
+				<label>Burst</label>
+				<texPath>UI/Gizmos/FireRate_Burst</texPath>
+			</li>
+		</fireModes>
+
+		<graphicData>
+			<texPath>TSE/Turrets/Cannon</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(2, 2)</drawSize>
+		</graphicData>
+		
+		<ammunition>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</ammunition>
+	</Vehicles.VehicleTurretDef>
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>TSE_Bullet_Turret_Cannon</defName>
+		<label>cannon turret shot</label>
+		<graphicData>
+		  <texPath>Things/Projectile/Bullet_Big</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+		  <damageDef>Bullet</damageDef>
+		  <damageAmountBase>20</damageAmountBase>
+		  <armorPenetrationBase>0.4</armorPenetrationBase>
+		  <speed>90</speed>
+		</projectile>
+	</ThingDef>
+	
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
+		<defName>TSE_Turret_Rocket</defName>
+		<label>rocket turret</label>
+		<description>...</description>
+		
+		<turretType>Rotatable</turretType>
+		<shotSound>RocketswarmLauncher_Fire</shotSound>
+		<reloadSound>Artillery_ShellLoaded</reloadSound>
+		
+		<projectile>TSE_Bullet_Turret_Rocket</projectile>
+		
+		<reloadTimer>10</reloadTimer>
+		<warmUpTimer>2</warmUpTimer>
+		<genericAmmo>true</genericAmmo>
+		<magazineCapacity>10</magazineCapacity>
+		<chargePerAmmoCount>10</chargePerAmmoCount>
+		
+		<autoSnapTargeting>false</autoSnapTargeting>
+		<rotationSpeed>1</rotationSpeed>
+		
+		<projectileOffset>1</projectileOffset>
+		
+		<minRange>9.9</minRange>
+		
+		<cooldown>
+			<heatPerShot>5</heatPerShot>
+			<dissipationRate>0.03333</dissipationRate> <!-- 2 per second -->
+		</cooldown>
+		
+		<fireModes>
+			<li>
+				<shotsPerBurst>5</shotsPerBurst>
+				<ticksBetweenShots>10</ticksBetweenShots>
+				<ticksBetweenBursts>240</ticksBetweenBursts>
+				<spreadRadius>6.9</spreadRadius>
+				<label>Burst (5)</label>
+				<texPath>UI/Gizmos/FireRate_Burst</texPath>
+			</li>
+			<li>
+				<shotsPerBurst>10</shotsPerBurst>
+				<ticksBetweenShots>10</ticksBetweenShots>
+				<ticksBetweenBursts>240</ticksBetweenBursts>
+				<spreadRadius>6.9</spreadRadius>
+				<label>Burst (10)</label>
+				<texPath>UI/Gizmos/FireRate_Burst</texPath>
+			</li>
+		</fireModes>
+		
+		<graphicData>
+			<texPath>TSE/Turrets/Rocket</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(2, 2)</drawSize>
+		</graphicData>
+		
+		<ammunition>
+			<thingDefs>
+				<li>Chemfuel</li>
+			</thingDefs>
+		</ammunition>
+	</Vehicles.VehicleTurretDef>
+	
+		<!-- Rocket turret -->
+	<ThingDef ParentName="BaseBullet">
+		<defName>TSE_Bullet_Turret_Rocket</defName>
+		<label>turret rocket</label>
+		<thingClass>VanillaVehiclesExpanded.Rocket_Scytheman</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/Rocket_Swarm</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.2</drawSize>
+		</graphicData>
+		<projectile>
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>20</damageAmountBase>
+			<flyOverhead>true</flyOverhead>
+			<speed>40</speed>
+			<arcHeightFactor>1</arcHeightFactor>
+			<explosionRadius>2.9</explosionRadius>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+			<soundExplode>Explosion_Rocket</soundExplode>
+			<soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+			<soundAmbient>MortarRound_Ambient</soundAmbient>
+		</projectile>
+		<drawOffscreen>true</drawOffscreen>
+	</ThingDef>
+	
+		<!-- Gatling turret -->
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
+		<defName>TSE_Turret_Gatling</defName>
+		<label>gatling turret</label>
+		<description>...</description>
+		<turretType>Rotatable</turretType>
+		<shotSound>Shot_Minigun</shotSound>
+		<reloadSound>VVE_MarshalReloadSound</reloadSound>
+		
+		<projectile>TSE_Bullet_Turret_Gatling</projectile>
+		<reloadTimer>10</reloadTimer>
+		<warmUpTimer>2</warmUpTimer>
+		<chargePerAmmoCount>0.25</chargePerAmmoCount>
+		
+		<magazineCapacity>125</magazineCapacity>
+		<genericAmmo>true</genericAmmo>
+		
+		<hitFlags>IntendedTarget</hitFlags>
+		
+		<autoSnapTargeting>true</autoSnapTargeting>
+		<rotationSpeed>1</rotationSpeed>
+		
+		<projectileOffset>2.25</projectileOffset>
+		
+		<minRange>2.9</minRange>
+		<maxRange>23.9</maxRange>
+		
+		<cooldown>
+			<heatPerShot>0.5</heatPerShot>
+			<dissipationRate>0.01667</dissipationRate> <!-- 1 per second -->
+		</cooldown>
+		
+		<recoil>
+			<distanceTotal>0.1</distanceTotal>
+			<distancePerTick>0.01</distancePerTick>
+			<speedMultiplierPostRecoil>0.5</speedMultiplierPostRecoil>
+		</recoil>
+		
+		<attachProjectileFlag>VVE_Tank</attachProjectileFlag>
+		
+		<fireModes>
+			<li>
+				<shotsPerBurst>12</shotsPerBurst>
+				<ticksBetweenShots>6</ticksBetweenShots>
+				<ticksBetweenBursts>180</ticksBetweenBursts>
+				<burstsTillWarmup>3</burstsTillWarmup>
+				<label>Burst</label>
+				<texPath>UI/Gizmos/FireRate_Burst</texPath>
+			</li>
+		</fireModes>
+
+		<graphicData>
+			<texPath>TSE/Turrets/Gatling</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(3, 3)</drawSize>
+		</graphicData>
+		
+		<ammunition>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</ammunition>
+	</Vehicles.VehicleTurretDef>
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>TSE_Bullet_Turret_Gatling</defName>
+		<label>gatling turret bullet</label>
+		<graphicData>
+		  <texPath>Things/Projectile/Bullet_Small</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+		  <damageDef>Bullet</damageDef>
+		  <damageAmountBase>8</damageAmountBase>
+		  <armorPenetrationBase>0.4</armorPenetrationBase>
+		  <speed>90</speed>
+		</projectile>
+	</ThingDef>
+	
+</Defs>

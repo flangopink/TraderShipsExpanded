@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- someone tell the guys at ludeon that they fucked up transparent apparel by locking it behind styles. -->
+  <ThingStyleDef>
+    <defName>TSE_EnableTransparency_Helmet</defName>
+    <wornGraphicPath>TSE/Apparel/Helmet/Helmet</wornGraphicPath>
+    <graphicData>
+      <texPath>TSE/Apparel/Helmet/_item</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
+    </graphicData>
+  </ThingStyleDef>
+  
+  <ThingStyleDef>
+    <defName>TSE_EnableTransparency_Bubble</defName>
+    <wornGraphicPath>TSE/Apparel/Helmet/Bubble/HelmetBubble</wornGraphicPath>
+    <graphicData>
+      <texPath>TSE/Apparel/Helmet/Bubble/_item</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
+    </graphicData>
+  </ThingStyleDef>
+
+</Defs>

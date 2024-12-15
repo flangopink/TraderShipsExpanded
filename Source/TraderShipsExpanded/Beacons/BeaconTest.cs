@@ -7,7 +7,7 @@ using Verse;
 namespace TraderShipsExpanded
 {
     public class BeaconTest : Building
-    {
+    {/*
         private const float TradeRadius = 7.9f;
 
         private static List<IntVec3> tradeableCells = new List<IntVec3>();
@@ -80,6 +80,6 @@ namespace TraderShipsExpanded
                     yield return item;
                 }
             }
-        }
+        }*/
     }
 }

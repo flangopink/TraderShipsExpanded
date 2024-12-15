@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>TSE_Vehicle_Cutlass_Blueprint</defName>
+		<label>Cutlass</label>
+		<description>...</description>
+		
+		<graphicData>
+			<texPath>TSE/Ships/Cutlass/Vehicle/Cutlass</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(4,7)</drawSize>
+			<!-- placeholder for drawOffset -->
+		</graphicData>
+		
+		<size>(3,7)</size>
+		
+		<statBases>
+			<WorkToBuild>50000</WorkToBuild>
+			<MaxHitPoints>700</MaxHitPoints>
+			<Flammability>0.5</Flammability>
+		</statBases>
+
+		<!-- small ship -->
+		<costList>
+			<VVE_EngineBlock>8</VVE_EngineBlock>
+			<VVE_CarAlternator>16</VVE_CarAlternator>
+			<VVE_CarExhaust>10</VVE_CarExhaust>
+			<VVE_CarSuspension>8</VVE_CarSuspension>
+			<VVE_CarWheel>4</VVE_CarWheel>
+			<Steel>800</Steel>
+			<Plasteel>200</Plasteel>
+			<ComponentIndustrial>30</ComponentIndustrial>
+			<VVE_CarFuelTank>4</VVE_CarFuelTank>
+			<VVE_CarTransmission>6</VVE_CarTransmission>
+			<VVE_CarRadiator>2</VVE_CarRadiator>
+			<VVE_CarWiring>6</VVE_CarWiring>
+			<VVE_CarBattery>6</VVE_CarBattery>
+		</costList>
+					
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>TSE_Vehicle_Cutlass</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+</Defs>

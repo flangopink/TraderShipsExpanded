@@ -16,21 +16,31 @@ namespace TraderShipsExpanded
         public CompProperties_TraderShip Props => (CompProperties_TraderShip)props;
         public LandedShip tradeShip;
         public Color col;
-        //public QuestPart_ShipsTradeRequest tradeRequest;
+
+        public bool isQuestShip;
+        public bool shouldDepart;
 
         private static readonly Texture2D SendAwayTexture = ContentFinder<Texture2D>.Get("TSE/UI/SendAway", true);
-        //private static readonly Texture2D TradeCommandTex = ContentFinder<Texture2D>.Get("UI/Commands/FulfillTradeRequest", true);
+
+        private int HitPointsThreshold => isQuestShip ? (int)(parent.MaxHitPoints * 0.25) : (int)(parent.MaxHitPoints * 0.8);
 
         public override void PostExposeData()
         {
             Scribe_Deep.Look(ref tradeShip, "ship");
             Scribe_Values.Look(ref col, "col");
+            Scribe_Values.Look(ref isQuestShip, "isQuestShip");
             //Scribe_Deep.Look(ref tradeRequest, "tradeRequest");
         }
 
         public override void CompTick()
         {
             if (tradeShip == null) return;
+            if (isQuestShip)
+            {
+                if (shouldDepart) SendAway();
+                return; 
+            }
+
             if (tradeShip.Departed)
             {
                 if (parent.Spawned) SendAway();
@@ -57,16 +67,8 @@ namespace TraderShipsExpanded
             string res = "TSE_TraderShip".Translate(TraderKindLabel).CapitalizeFirst()
                 + factionString
                 + "\n----------------------------------------\n"
-                + "TSE_TraderShipLeavingIn".Translate(GenDate.ToStringTicksToPeriod(tradeShip.ticksUntilDeparture));
-                //+ $" ({tradeShip.ticksUntilDeparture} ticks)";
-
-            /*
-            if (tradeRequest != null)
-            {
-                res += "\n" + "TraderShipsQuestRequestInfo".Translate(TradeRequestUtility.RequestedThingLabel(tradeRequest.requestedThingDef, tradeRequest.requestedCount).CapitalizeFirst(), (tradeRequest.requestedThingDef.GetStatValueAbstract(StatDefOf.MarketValue, null) * (float)tradeRequest.requestedCount).ToStringMoney(null));
-            }
-            */
-
+                + (isQuestShip ? "TSE_TraderShipCannotLeaveQuest".Translate() : "TSE_TraderShipLeavingIn".Translate(GenDate.ToStringTicksToPeriod(tradeShip.ticksUntilDeparture)))
+                + (DebugSettings.godMode ? $"\n ({tradeShip.ticksUntilDeparture} ticks)" : "");
             return res;
         }
 
@@ -74,6 +76,7 @@ namespace TraderShipsExpanded
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             if (respawningAfterLoad) return;
+            if (isQuestShip) return;
 
             Props.soundThud?.PlayOneShot(parent);
 
@@ -89,7 +92,7 @@ namespace TraderShipsExpanded
             bool leaving = false;
 
             if (totalDamageDealt > 25) leaving = true;
-            else if (parent.HitPoints <= parent.MaxHitPoints * 0.9) leaving = true;
+            else if (parent.HitPoints <= HitPointsThreshold) leaving = true;
 
             if (leaving)
             {
@@ -145,6 +148,8 @@ namespace TraderShipsExpanded
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
+            if (isQuestShip) yield break;
+
             yield return new Command_Action
             {
                 defaultLabel = "TSE_TraderShipSendAway".Translate(),
@@ -152,37 +157,6 @@ namespace TraderShipsExpanded
                 action = new Action(()=>SendAway()), // what is this black magic?
                 icon = SendAwayTexture,
             };
-
-            /*
-            if (tradeRequest != null)
-            {
-                Command_Action command_Action = new Command_Action();
-                command_Action.defaultLabel = "CommandFulfillTradeOffer".Translate();
-                command_Action.defaultDesc = "CommandFulfillTradeOfferDesc".Translate();
-                command_Action.icon = TradeCommandTex;
-                command_Action.action = delegate ()
-                {
-                    if (tradeRequest == null)
-                    {
-                        Log.Error("Attempted to fulfill an unavailable request");
-                        return;
-                    }
-
-                    WindowStack windowStack = Find.WindowStack;
-                    TaggedString text = "CommandFulfillTradeOfferConfirm".Translate(GenLabel.ThingLabel(tradeRequest.requestedThingDef, null, tradeRequest.requestedCount));
-
-                    windowStack.Add(Dialog_MessageBox.CreateConfirmation(text, delegate () { FulfillTradeRequest(); }, false, null));
-                };
-
-                if (!tradeRequest.CanFulfillRequest(tradeShip))
-                {
-                    command_Action.Disable("CommandFulfillTradeOfferFailInsufficient".Translate(TradeRequestUtility.RequestedThingLabel(tradeRequest.requestedThingDef, tradeRequest.requestedCount)));
-                }
-
-                yield return command_Action;
-            }
-            */
-
             yield break;
         }
 
