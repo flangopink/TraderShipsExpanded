@@ -77,7 +77,7 @@
         <muteWhenPaused>True</muteWhenPaused>      
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipPath>VehicleEngineRocket_Sustainer</clipPath>
+            <clipPath>TSE/RocketSustainer</clipPath>
           </li>
         </grains>      
         <pitchRange>1.2~1.25</pitchRange>

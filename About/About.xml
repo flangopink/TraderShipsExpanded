@@ -7,4 +7,19 @@
 	</supportedVersions>
 	<packageId>flangopink.TraderShipsExpanded</packageId>
 	<description>description</description> <!-- TODO: Edit -->
+    <modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2009463077</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>brrainz.harmony</li>
+		<li>SmashPhil.VehicleFramework</li>
+		<li>OskarPotocki.VanillaVehiclesExpanded</li>
+		<li>oskarpotocki.vanillavehiclesexpandedtier3</li>
+	</loadAfter>
 </ModMetaData>
